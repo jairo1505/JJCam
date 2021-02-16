@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" rowHeight="111" id="wIt-aD-Y9s" customClass="SettingsTableViewCell" customModule="testSwifter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="723" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wIt-aD-Y9s" id="LqV-E2-e1O">
+                <rect key="frame" x="0.0" y="0.0" width="723" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-L9-yNc">
+                        <rect key="frame" x="16" y="16" width="691" height="79"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Yw3-L9-yNc" secondAttribute="trailing" constant="16" id="5Mz-O8-sbg"/>
+                    <constraint firstAttribute="bottom" secondItem="Yw3-L9-yNc" secondAttribute="bottom" constant="16" id="Qsd-Vd-oh1"/>
+                    <constraint firstItem="Yw3-L9-yNc" firstAttribute="top" secondItem="LqV-E2-e1O" secondAttribute="top" constant="16" id="XKG-0s-XPr"/>
+                    <constraint firstItem="Yw3-L9-yNc" firstAttribute="leading" secondItem="LqV-E2-e1O" secondAttribute="leading" constant="16" id="kTm-1h-al3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="title" destination="Yw3-L9-yNc" id="AUy-BA-Keo"/>
+            </connections>
+            <point key="canvasLocation" x="81" y="-123"/>
+        </tableViewCell>
+    </objects>
+</document>

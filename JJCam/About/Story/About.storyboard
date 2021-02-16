@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wF4-JZ-2po">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About View Controller-->
+        <scene sceneID="vVi-Eg-yhn">
+            <objects>
+                <viewController id="wF4-JZ-2po" customClass="AboutViewController" customModule="testSwifter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zsd-H5-Eo6"/>
+                        <viewControllerLayoutGuide type="bottom" id="LLS-l0-Occ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tJT-ut-iaM">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceHorizontal="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="081-LG-3Er">
+                                <rect key="frame" x="60" y="181" width="1800" height="849"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ1-Me-MfH">
+                                <rect key="frame" x="60" y="50" width="178" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Voltar"/>
+                                <connections>
+                                    <action selector="backButton:" destination="wF4-JZ-2po" eventType="primaryActionTriggered" id="Vh3-g4-irM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKk-Fh-HJ7">
+                                <rect key="frame" x="862.5" y="50" width="195" height="91"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lcg-gO-Uhp"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="081-LG-3Er" secondAttribute="trailing" constant="60" id="AeC-FK-MWy"/>
+                            <constraint firstItem="WKk-Fh-HJ7" firstAttribute="top" secondItem="tJT-ut-iaM" secondAttribute="top" constant="50" id="LeY-Ud-rTG"/>
+                            <constraint firstItem="NZ1-Me-MfH" firstAttribute="leading" secondItem="tJT-ut-iaM" secondAttribute="leading" constant="60" id="M7r-Km-eJb"/>
+                            <constraint firstItem="WKk-Fh-HJ7" firstAttribute="centerX" secondItem="tJT-ut-iaM" secondAttribute="centerX" id="NSS-aR-NJr"/>
+                            <constraint firstItem="081-LG-3Er" firstAttribute="leading" secondItem="tJT-ut-iaM" secondAttribute="leading" constant="60" id="Rp7-Wj-F3C"/>
+                            <constraint firstAttribute="bottom" secondItem="081-LG-3Er" secondAttribute="bottom" constant="50" id="lvk-I8-NVv"/>
+                            <constraint firstItem="NZ1-Me-MfH" firstAttribute="top" secondItem="tJT-ut-iaM" secondAttribute="top" constant="50" id="mnq-YZ-SLT"/>
+                            <constraint firstItem="081-LG-3Er" firstAttribute="top" secondItem="WKk-Fh-HJ7" secondAttribute="bottom" constant="40" id="scA-ue-SQV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textBody" destination="081-LG-3Er" id="ARM-72-I40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hn-pn-5xZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="130"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

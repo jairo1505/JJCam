@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="UTF-8"></meta>
+            <title>JJCam</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                <style>myCSS</style>
+                </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="brand-logo center nav-title-custom">Adicionar dispositivo</div>
+                </div>
+            </nav>
+        </div>
+        <div class="body-custom">
+            <br/>
+            <div class="form-field">
+                <label for="deviceProtocol">Protocolo</label>
+                <select class="browser-default" name="deviceProtocol" id="deviceProtocol">
+                    <option value="INTELBRAS">Intelbras</option>
+                    <option value="HIKVISION">Hikvision</option>
+                </select>
+            </div><br/>
+            <div class="form-field">
+                <label for="deviceName">Nome</label>
+                <input type="text" id="deviceName" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field">
+                <label for="deviceIP">IP/DNS</label>
+                <input type="text" id="deviceIP" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field">
+                <label for="devicePort">Porta RTSP</label>
+                <input type="text" id="devicePort" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field">
+                <label for="deviceUser">Usuário</label>
+                <input type="text" id="deviceUser" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field">
+                <label for="devicePassword">Senha</label>
+                <input type="text" id="devicePassword" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field">
+                <label for="channels">Número de canais</label>
+                <input type="text" id="channels" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field">
+                <label for="verificationCode">Código de verificação</label>
+                <input type="text" id="verificationCode" autocomplete="off"/>
+            </div><br/>
+            <div class="form-field center-align">
+                <label class="red-text" id="error"></label>
+            </div><br>
+            <div class="form-field center-align">
+                <button class="btn-large" onclick="addDevice();">Salvar</button>
+            </div><br/>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>myJS</script>
+    </body>
+</html>
