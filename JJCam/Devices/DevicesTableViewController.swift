@@ -58,9 +58,9 @@ class DevicesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(deviceManager.devices[indexPath.row].getProtocol(channel: 10))
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+        guard let story = UIStoryboard(name: "Cameras", bundle: nil).instantiateInitialViewController() as? CamerasViewController else { return }
+        story.index = indexPath.row
+        present(story, animated: true, completion: nil)    }
     
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if context.previouslyFocusedIndexPath != nil {

@@ -17,6 +17,8 @@
 		412A157A25C5A072007C9141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412A157925C5A072007C9141 /* Assets.xcassets */; };
 		412A157D25C5A072007C9141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412A157B25C5A072007C9141 /* LaunchScreen.storyboard */; };
 		415846A925DC4E1300EAEF4D /* JJCam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 415846A725DC4E1300EAEF4D /* JJCam.xcdatamodeld */; };
+		417C361B25E14C16005C2C4C /* Cameras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417C361A25E14C16005C2C4C /* Cameras.storyboard */; };
+		417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C362125E14E3B005C2C4C /* CamerasViewController.swift */; };
 		41803AF925DAB3030070803F /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803AF825DAB3030070803F /* DeviceManager.swift */; };
 		41803AFF25DAE3E80070803F /* Devices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41803AFE25DAE3E80070803F /* Devices.storyboard */; };
 		41803B0225DAE3FC0070803F /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B0125DAE3FC0070803F /* DevicesTableViewController.swift */; };
@@ -28,6 +30,26 @@
 		41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */; };
 		41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B2125DAF7B40070803F /* SettingsTableViewCell.swift */; };
 		41803B2525DAF7C80070803F /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41803B2425DAF7C80070803F /* SettingsTableViewCell.xib */; };
+		41DF99C025E152DE006F3CDE /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */; };
+		41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */; };
+		41DF99C625E155E6006F3CDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99C525E155E6006F3CDE /* AudioToolbox.framework */; };
+		41DF99C825E155F2006F3CDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99C725E155F2006F3CDE /* AVFoundation.framework */; };
+		41DF99CA25E155FC006F3CDE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99C925E155FC006F3CDE /* CFNetwork.framework */; };
+		41DF99CC25E15608006F3CDE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99CB25E15608006F3CDE /* CoreFoundation.framework */; };
+		41DF99CE25E15615006F3CDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99CD25E15615006F3CDE /* CoreGraphics.framework */; };
+		41DF99D025E1561E006F3CDE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99CF25E1561E006F3CDE /* CoreMedia.framework */; };
+		41DF99D225E15625006F3CDE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99D125E15625006F3CDE /* CoreText.framework */; };
+		41DF99D425E1562C006F3CDE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99D325E1562C006F3CDE /* CoreVideo.framework */; };
+		41DF99D625E15636006F3CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99D525E15636006F3CDE /* Foundation.framework */; };
+		41DF99D825E15652006F3CDE /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99D725E15648006F3CDE /* libbz2.tbd */; };
+		41DF99DB25E15664006F3CDE /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99DA25E1565E006F3CDE /* libiconv.tbd */; };
+		41DF99DE25E15671006F3CDE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99DD25E15671006F3CDE /* OpenGLES.framework */; };
+		41DF99E025E1567D006F3CDE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99DF25E1567D006F3CDE /* QuartzCore.framework */; };
+		41DF99E225E15685006F3CDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99E125E15685006F3CDE /* Security.framework */; };
+		41DF99E425E15690006F3CDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99E325E15690006F3CDE /* UIKit.framework */; };
+		41DF99E625E1569F006F3CDE /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99E525E1569F006F3CDE /* VideoToolbox.framework */; };
+		41DF99E925E15733006F3CDE /* WatchCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DF99E825E15733006F3CDE /* WatchCamera.storyboard */; };
+		41DF99EC25E1575C006F3CDE /* WatchCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */; };
 		41EB622625CAF1DC00DFAF54 /* home.html in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622525CAF1DC00DFAF54 /* home.html */; };
 		41EB622D25CB0D8200DFAF54 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622C25CB0D8200DFAF54 /* main.css */; };
 		41EB623025CB0D9100DFAF54 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622F25CB0D9100DFAF54 /* main.js */; };
@@ -46,6 +68,8 @@
 		412A157C25C5A072007C9141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		412A157E25C5A072007C9141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		415846A825DC4E1300EAEF4D /* JJCam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJCam.xcdatamodel; sourceTree = "<group>"; };
+		417C361A25E14C16005C2C4C /* Cameras.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cameras.storyboard; sourceTree = "<group>"; };
+		417C362125E14E3B005C2C4C /* CamerasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamerasViewController.swift; sourceTree = "<group>"; };
 		41803AF825DAB3030070803F /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		41803AFE25DAE3E80070803F /* Devices.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Devices.storyboard; sourceTree = "<group>"; };
 		41803B0125DAE3FC0070803F /* DevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +81,26 @@
 		41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceViewController.swift; sourceTree = "<group>"; };
 		41803B2125DAF7B40070803F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		41803B2425DAF7C80070803F /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
+		41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTableViewCell.swift; sourceTree = "<group>"; };
+		41DF99C525E155E6006F3CDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		41DF99C725E155F2006F3CDE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		41DF99C925E155FC006F3CDE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		41DF99CB25E15608006F3CDE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		41DF99CD25E15615006F3CDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		41DF99CF25E1561E006F3CDE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		41DF99D125E15625006F3CDE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		41DF99D325E1562C006F3CDE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		41DF99D525E15636006F3CDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		41DF99D725E15648006F3CDE /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		41DF99DA25E1565E006F3CDE /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		41DF99DD25E15671006F3CDE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		41DF99DF25E1567D006F3CDE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		41DF99E125E15685006F3CDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		41DF99E325E15690006F3CDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		41DF99E525E1569F006F3CDE /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		41DF99E825E15733006F3CDE /* WatchCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchCamera.storyboard; sourceTree = "<group>"; };
+		41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCameraViewController.swift; sourceTree = "<group>"; };
 		41EB622525CAF1DC00DFAF54 /* home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = home.html; sourceTree = "<group>"; };
 		41EB622C25CB0D8200DFAF54 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		41EB622F25CB0D9100DFAF54 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
@@ -73,7 +117,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DF99CE25E15615006F3CDE /* CoreGraphics.framework in Frameworks */,
+				41DF99E425E15690006F3CDE /* UIKit.framework in Frameworks */,
+				41DF99E225E15685006F3CDE /* Security.framework in Frameworks */,
+				41DF99CC25E15608006F3CDE /* CoreFoundation.framework in Frameworks */,
+				41DF99E025E1567D006F3CDE /* QuartzCore.framework in Frameworks */,
+				41DF99D825E15652006F3CDE /* libbz2.tbd in Frameworks */,
+				41DF99DE25E15671006F3CDE /* OpenGLES.framework in Frameworks */,
 				186FE6DF2AFC2FEEC1154269 /* Pods_JJCam.framework in Frameworks */,
+				41DF99C625E155E6006F3CDE /* AudioToolbox.framework in Frameworks */,
+				41DF99D225E15625006F3CDE /* CoreText.framework in Frameworks */,
+				41DF99DB25E15664006F3CDE /* libiconv.tbd in Frameworks */,
+				41DF99D625E15636006F3CDE /* Foundation.framework in Frameworks */,
+				41DF99D425E1562C006F3CDE /* CoreVideo.framework in Frameworks */,
+				41DF99E625E1569F006F3CDE /* VideoToolbox.framework in Frameworks */,
+				41DF99CA25E155FC006F3CDE /* CFNetwork.framework in Frameworks */,
+				41DF99C825E155F2006F3CDE /* AVFoundation.framework in Frameworks */,
+				41DF99D025E1561E006F3CDE /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,20 +227,24 @@
 			isa = PBXGroup;
 			children = (
 				41803B0425DAE45F0070803F /* Cell */,
-				41803AFD25DAE3D80070803F /* Story */,
+				41803AFD25DAE3D80070803F /* Storys */,
 				41803B0125DAE3FC0070803F /* DevicesTableViewController.swift */,
 				41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */,
+				417C362125E14E3B005C2C4C /* CamerasViewController.swift */,
+				41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
 		};
-		41803AFD25DAE3D80070803F /* Story */ = {
+		41803AFD25DAE3D80070803F /* Storys */ = {
 			isa = PBXGroup;
 			children = (
 				41803AFE25DAE3E80070803F /* Devices.storyboard */,
 				41803B1925DAF6320070803F /* NewDevice.storyboard */,
+				417C361A25E14C16005C2C4C /* Cameras.storyboard */,
+				41DF99E825E15733006F3CDE /* WatchCamera.storyboard */,
 			);
-			path = Story;
+			path = Storys;
 			sourceTree = "<group>";
 		};
 		41803B0425DAE45F0070803F /* Cell */ = {
@@ -188,6 +252,8 @@
 			children = (
 				41803B0525DAE4770070803F /* DeviceTableViewCell.xib */,
 				41803B0825DAE4C40070803F /* DeviceTableViewCell.swift */,
+				41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */,
+				41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -256,6 +322,22 @@
 		CFF6E8651ECCF9A163FC64E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41DF99E525E1569F006F3CDE /* VideoToolbox.framework */,
+				41DF99E325E15690006F3CDE /* UIKit.framework */,
+				41DF99E125E15685006F3CDE /* Security.framework */,
+				41DF99DF25E1567D006F3CDE /* QuartzCore.framework */,
+				41DF99DD25E15671006F3CDE /* OpenGLES.framework */,
+				41DF99DA25E1565E006F3CDE /* libiconv.tbd */,
+				41DF99D725E15648006F3CDE /* libbz2.tbd */,
+				41DF99D525E15636006F3CDE /* Foundation.framework */,
+				41DF99D325E1562C006F3CDE /* CoreVideo.framework */,
+				41DF99D125E15625006F3CDE /* CoreText.framework */,
+				41DF99CF25E1561E006F3CDE /* CoreMedia.framework */,
+				41DF99CD25E15615006F3CDE /* CoreGraphics.framework */,
+				41DF99CB25E15608006F3CDE /* CoreFoundation.framework */,
+				41DF99C925E155FC006F3CDE /* CFNetwork.framework */,
+				41DF99C725E155F2006F3CDE /* AVFoundation.framework */,
+				41DF99C525E155E6006F3CDE /* AudioToolbox.framework */,
 				FFC7645FC27AF6182441B077 /* Pods_JJCam.framework */,
 			);
 			name = Frameworks;
@@ -321,7 +403,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				412A157D25C5A072007C9141 /* LaunchScreen.storyboard in Resources */,
+				41DF99E925E15733006F3CDE /* WatchCamera.storyboard in Resources */,
 				41EB622D25CB0D8200DFAF54 /* main.css in Resources */,
+				41DF99C025E152DE006F3CDE /* CameraTableViewCell.xib in Resources */,
 				41034FB225DC0CEA00109D3A /* About.storyboard in Resources */,
 				41EB622625CAF1DC00DFAF54 /* home.html in Resources */,
 				41EB623025CB0D9100DFAF54 /* main.js in Resources */,
@@ -329,6 +413,7 @@
 				412A157A25C5A072007C9141 /* Assets.xcassets in Resources */,
 				41803B2525DAF7C80070803F /* SettingsTableViewCell.xib in Resources */,
 				41803B1225DAF5860070803F /* Settings.storyboard in Resources */,
+				417C361B25E14C16005C2C4C /* Cameras.storyboard in Resources */,
 				41803B1A25DAF6320070803F /* NewDevice.storyboard in Resources */,
 				41803B0625DAE4770070803F /* DeviceTableViewCell.xib in Resources */,
 				412A157525C5A070007C9141 /* Main.storyboard in Resources */,
@@ -386,6 +471,8 @@
 			files = (
 				41803AF925DAB3030070803F /* DeviceManager.swift in Sources */,
 				41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */,
+				41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */,
+				41DF99EC25E1575C006F3CDE /* WatchCameraViewController.swift in Sources */,
 				41EB623425CB107B00DFAF54 /* UIViewExtension.swift in Sources */,
 				415846A925DC4E1300EAEF4D /* JJCam.xcdatamodeld in Sources */,
 				41803B0225DAE3FC0070803F /* DevicesTableViewController.swift in Sources */,
@@ -394,6 +481,7 @@
 				41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */,
 				41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */,
 				41803B1725DAF5B70070803F /* SettingsTableViewController.swift in Sources */,
+				417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */,
 				4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */,
 				4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */,
 			);

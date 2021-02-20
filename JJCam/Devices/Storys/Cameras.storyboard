@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vaM-fS-Anu">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cameras View Controller-->
+        <scene sceneID="7wq-mK-OAd">
+            <objects>
+                <viewController id="vaM-fS-Anu" customClass="CamerasViewController" customModule="JJCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kvv-Jq-NmX"/>
+                        <viewControllerLayoutGuide type="bottom" id="LvB-Cg-F4p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="94Y-pX-ssv">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3a-Sw-5c5">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                                <items>
+                                    <navigationItem title="Title" id="DqB-vA-WIn"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-s4-LiZ">
+                                <rect key="frame" x="80" y="145" width="1760" height="875"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fuN-5S-NAb"/>
+                        <constraints>
+                            <constraint firstItem="ESJ-s4-LiZ" firstAttribute="leading" secondItem="fuN-5S-NAb" secondAttribute="leading" id="Ase-kX-Pma"/>
+                            <constraint firstItem="ESJ-s4-LiZ" firstAttribute="top" secondItem="g3a-Sw-5c5" secondAttribute="bottom" id="QWz-E2-WvO"/>
+                            <constraint firstItem="fuN-5S-NAb" firstAttribute="trailing" secondItem="ESJ-s4-LiZ" secondAttribute="trailing" id="TKm-md-wGE"/>
+                            <constraint firstItem="g3a-Sw-5c5" firstAttribute="top" secondItem="94Y-pX-ssv" secondAttribute="top" id="YJg-tY-eFF"/>
+                            <constraint firstItem="fuN-5S-NAb" firstAttribute="bottom" secondItem="ESJ-s4-LiZ" secondAttribute="bottom" id="oho-L2-jf8"/>
+                            <constraint firstAttribute="trailing" secondItem="g3a-Sw-5c5" secondAttribute="trailing" id="phd-Ar-8bg"/>
+                            <constraint firstItem="g3a-Sw-5c5" firstAttribute="leading" secondItem="94Y-pX-ssv" secondAttribute="leading" id="wau-qT-SuW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="g3a-Sw-5c5" id="mFa-ev-ACy"/>
+                        <outlet property="tableView" destination="ESJ-s4-LiZ" id="eoe-kM-O1I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Anr-wr-DTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="-208"/>
+        </scene>
+    </scenes>
+</document>
