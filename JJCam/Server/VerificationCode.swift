@@ -17,10 +17,6 @@ class VerificationCode {
     }
     
     func verificateCode(code: Int) -> Bool {
-        if self.code == code {
-            return true
-        } else {
-            return false
-        }
+        return self.code == code
     }
 }

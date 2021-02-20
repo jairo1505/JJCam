@@ -12,9 +12,6 @@ class NewDeviceViewController: UIViewController {
     
     @IBOutlet weak var lbInfo: UILabel!
     @IBOutlet weak var img_qrcode: UIImageView!
-    @IBAction func backButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

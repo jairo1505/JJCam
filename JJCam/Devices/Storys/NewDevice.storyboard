@@ -10,7 +10,7 @@
         <!--Ajustes-->
         <scene sceneID="yHh-pA-b5C">
             <objects>
-                <viewController title="Ajustes" id="u2m-lX-ONv" customClass="NewDeviceViewController" customModule="testSwifter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ajustes" id="u2m-lX-ONv" customClass="NewDeviceViewController" customModule="JJCam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bLa-eT-OH4"/>
                         <viewControllerLayoutGuide type="bottom" id="qXv-gm-ZIL"/>
@@ -38,26 +38,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJJ-n8-vjH">
-                                <rect key="frame" x="871" y="128" width="178" height="86"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Voltar"/>
-                                <connections>
-                                    <action selector="backButton:" destination="u2m-lX-ONv" eventType="primaryActionTriggered" id="Fxy-0y-iZ4"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-fu-PR0">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                                <items>
+                                    <navigationItem title="Adicionar Dispositivo" id="xXg-Zc-EJN"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q3s-gU-tXa"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ibb-fu-PR0" firstAttribute="leading" secondItem="Erd-Ny-xxo" secondAttribute="leading" id="0Vz-rD-ygX"/>
                             <constraint firstItem="H4i-Sy-QJs" firstAttribute="top" secondItem="2hP-uT-VlO" secondAttribute="bottom" constant="50" id="2Vy-qE-0Js"/>
                             <constraint firstItem="2hP-uT-VlO" firstAttribute="centerY" secondItem="Erd-Ny-xxo" secondAttribute="centerY" id="6CE-se-BTj"/>
-                            <constraint firstItem="ZJJ-n8-vjH" firstAttribute="centerX" secondItem="Erd-Ny-xxo" secondAttribute="centerX" id="LUu-dO-Q4D"/>
                             <constraint firstItem="2hP-uT-VlO" firstAttribute="centerX" secondItem="Erd-Ny-xxo" secondAttribute="centerX" id="SD4-4N-5l3"/>
+                            <constraint firstAttribute="trailing" secondItem="Ibb-fu-PR0" secondAttribute="trailing" id="ZNN-CB-thH"/>
+                            <constraint firstItem="Ibb-fu-PR0" firstAttribute="top" secondItem="Erd-Ny-xxo" secondAttribute="top" id="b93-at-Fyg"/>
                             <constraint firstItem="2hP-uT-VlO" firstAttribute="top" secondItem="lyb-Lq-bbq" secondAttribute="bottom" constant="50" id="c40-Xb-omk"/>
                             <constraint firstItem="lyb-Lq-bbq" firstAttribute="centerX" secondItem="Erd-Ny-xxo" secondAttribute="centerX" id="cRM-kf-IDv"/>
                             <constraint firstItem="H4i-Sy-QJs" firstAttribute="centerX" secondItem="Erd-Ny-xxo" secondAttribute="centerX" id="kQj-nt-foC"/>
-                            <constraint firstItem="lyb-Lq-bbq" firstAttribute="top" secondItem="ZJJ-n8-vjH" secondAttribute="bottom" constant="30" id="kYa-Jo-AZM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" id="RgD-l2-JOt"/>
