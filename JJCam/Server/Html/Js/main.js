@@ -24,7 +24,7 @@ function addDevice() {
             data: JSON.stringify(device),
             success: function (data) {
                 if(data.status == 200) {
-                    $('#error').html("sucesso");
+                    $('#bodyCustom').html("<br/><br/><img src='img/successCircle.svg'/><br/><h5 align='center' style='color: white;'>Dispositivo adicionado com sucesso!</h5>");
                 }
             },
             error: function (error) {

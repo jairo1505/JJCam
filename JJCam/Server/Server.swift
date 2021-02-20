@@ -14,6 +14,7 @@ class Server {
     
     func start() {
         do {
+            // MARK: - Resources site
             let html = Bundle.main.path(forResource: "home", ofType: "html")
             let css = Bundle.main.path(forResource: "main", ofType: "css")
             let js = Bundle.main.path(forResource: "main", ofType: "js")
@@ -24,6 +25,16 @@ class Server {
             strHtml = strHtml.replacingOccurrences(of: "myJS", with: strJs)
             server["/"] = { request in
                 return HttpResponse.ok(.html(strHtml))
+            }
+            
+            // MARK: - Image success
+            let img = Bundle.main.path(forResource: "successCircle", ofType: "svg")
+            let strImg = try String(contentsOfFile: img ?? "")
+            let data = [UInt8](strImg.utf8)
+            server["/img/successCircle.svg"] = { request in
+                return HttpResponse.raw(200, "OK", ["Accept-Ranges":"bytes", "Content-Type":"image/svg+xml"]) { (writer) in
+                    try writer.write(data)
+                }
             }
         } catch let error {
             debugPrint(error.localizedDescription)
