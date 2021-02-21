@@ -33,7 +33,12 @@ class DevicesTableViewController: UITableViewController {
                 self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
             }
         }))
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Editar", style: .cancel, handler: { _ in
+            guard let story = UIStoryboard(name: "NewDevice", bundle: nil).instantiateInitialViewController() as? NewDeviceViewController else { return }
+            story.device = self.deviceManager.devices[self.currentIndexFocus.row]
+            self.present(story, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)

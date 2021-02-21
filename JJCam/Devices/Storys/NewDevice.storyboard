@@ -63,6 +63,7 @@
                     <connections>
                         <outlet property="img_qrcode" destination="2hP-uT-VlO" id="vc3-ZH-4tP"/>
                         <outlet property="lbInfo" destination="H4i-Sy-QJs" id="g5I-Kh-FfZ"/>
+                        <outlet property="navigationBar" destination="Ibb-fu-PR0" id="8ZN-zu-UdI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ztc-KZ-v5s" sceneMemberID="firstResponder"/>

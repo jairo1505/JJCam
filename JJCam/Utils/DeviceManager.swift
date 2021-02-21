@@ -31,7 +31,31 @@ class DeviceManager {
                 try context.save()
                 self.maxID += 1
             } catch {
-                print("Falha ao Inserir o usuário")
+                print("Falha ao Inserir o dispositivo")
+            }
+        }
+    }
+    
+    func edit(id: Int, json: Device) {
+        DispatchQueue.main.async {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Devices")
+            request.predicate = NSPredicate(format: "id == \(id)")
+            request.returnsObjectsAsFaults = false
+            do {
+                let result = try context.fetch(request)
+                let data = result[0] as! NSManagedObject
+                data.setValue(json.deviceProtocol.rawValue, forKey: "deviceProtocol")
+                data.setValue(json.name, forKey: "name")
+                data.setValue(json.ip, forKey: "ip")
+                data.setValue(json.port, forKey: "port")
+                data.setValue(json.user, forKey: "user")
+                data.setValue(json.password, forKey: "password")
+                data.setValue(json.channels, forKey: "channels")
+                try context.save()
+            } catch {
+                print("Falha ao Editar o dispositivo")
             }
         }
     }
@@ -62,7 +86,7 @@ class DeviceManager {
                 self.maxID += 1
                 completion()
             } catch {
-                print("Falha ao Excluir Usuário")
+                print("Falha ao listar dispositivos")
             }
         }
     }

@@ -1,5 +1,28 @@
 const urlServer = window.location.origin;
 
+function getData() {
+    $.ajax({
+        type: "POST",
+        url: urlServer+"/api/getDevice",
+        crossDomain: true,
+        success: function (data) {
+            json = JSON.parse(data)
+            if(json.status == 200 && json.action == "edit") {
+                $('#titlePage').html("Editar " + json.name);
+                $('#deviceProtocol').val(json.deviceProtocol)
+                $('#deviceName').val(json.name)
+                $('#deviceIP').val(json.ip)
+                $('#devicePort').val(json.port)
+                $('#deviceUser').val(json.user)
+                $('#channels').val(json.channels)
+            }
+        },
+        error: function (error) {
+            $('#bodyCustom').html("<br/><br/><h5 align='center' style='color: white;'>😕<br/>Ops, tivemos um problema!</h5>");
+        }
+    });
+}
+
 function addDevice() {
     if ($('#deviceName').val() != "" && $('#deviceIP').val() != ""
         && $('#devicePort').val() != "" && $('#deviceUser').val() != ""
@@ -18,13 +41,13 @@ function addDevice() {
         
         $.ajax({
             type: "POST",
-            url: urlServer+"/api/newDevice",
+            url: urlServer+"/api/saveDevice",
             crossDomain: true,
                 dataType: "JSON",
             data: JSON.stringify(device),
             success: function (data) {
                 if(data.status == 200) {
-                    $('#bodyCustom').html("<br/><br/><img src='img/successCircle.svg'/><br/><h5 align='center' style='color: white;'>Dispositivo adicionado com sucesso!</h5>");
+                    $('#bodyCustom').html("<br/><br/><img src='img/successCircle.svg'/><br/><h5 align='center' style='color: white;'>Dispositivo salvo com sucesso!</h5>");
                 }
             },
             error: function (error) {
@@ -36,3 +59,5 @@ function addDevice() {
         $('#error').html("Preencha todos os campos!");
     }
 }
+
+getData();

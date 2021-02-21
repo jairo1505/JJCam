@@ -11,6 +11,8 @@ import Swifter
 class Server {
     public static let shared = Server()
     private let server = HttpServer()
+    private var deviceEditJson: String?
+    private var deviceEditId: Int?
     
     func start() {
         do {
@@ -42,13 +44,17 @@ class Server {
         
         
         
-        server["/api/newDevice"] = { request in
+        server["/api/saveDevice"] = { request in
             let data = Data(request.body)
             do {
                 let json = try JSONDecoder().decode(Device.self, from: data)
                 print(json)
                 if VerificationCode.shared.verificateCode(code: json.code) {
-                    DeviceManager.shared.save(json: json)
+                    if self.deviceEditJson?.isEmpty ?? true {
+                        DeviceManager.shared.save(json: json)
+                    } else {
+                        DeviceManager.shared.edit(id: self.deviceEditId ?? 0, json: json)
+                    }
                     return HttpResponse.ok(.text("{\"status\": 200}"))
                 } else {
                     return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Código de verificação inválido!\"}"))
@@ -57,6 +63,11 @@ class Server {
                 print(error.localizedDescription)
                 return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Requisição mal formada!\"}"))
             }
+        }
+        
+        
+        server["/api/getDevice"] = { request in
+            return HttpResponse.ok(.text(self.deviceEditJson ?? "{\"status\": 200,\"action\":\"add\"}"))
         }
         
         server["/files/:path"] = directoryBrowser("/")
@@ -70,6 +81,16 @@ class Server {
             print("Deu ruim")
             semaphore.signal()
         }
+    }
+    
+    func setDeviceEdit(_ device: Device?) {
+        guard let device = device else {
+            deviceEditJson = nil
+            deviceEditId = nil
+            return
+        }
+        deviceEditJson = "{\"status\": 200,\"action\":\"edit\",\"name\":\"\(device.name)\",\"deviceProtocol\":\"\(device.deviceProtocol.rawValue)\",\"ip\":\"\(device.ip)\",\"port\":\"\(device.port)\",\"user\":\"\(device.user)\",\"channels\":\"\(device.channels)\"}"
+        deviceEditId = device.id
     }
     
     func getIP() -> String {
