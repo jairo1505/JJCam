@@ -10,6 +10,7 @@
 		186FE6DF2AFC2FEEC1154269 /* Pods_JJCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC7645FC27AF6182441B077 /* Pods_JJCam.framework */; };
 		41034FB225DC0CEA00109D3A /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41034FB125DC0CEA00109D3A /* About.storyboard */; };
 		41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41034FB425DC0DBF00109D3A /* AboutViewController.swift */; };
+		410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1A625EBCD19007B9620 /* CameraView.swift */; };
 		4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1525C84CEA00DDE4C9 /* Server.swift */; };
 		4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */; };
 		412A157025C5A070007C9141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A156F25C5A070007C9141 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		41034FB125DC0CEA00109D3A /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		41034FB425DC0DBF00109D3A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		410EE1A625EBCD19007B9620 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4115FC1525C84CEA00DDE4C9 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
 		412A156C25C5A070007C9141 /* JJCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 				41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */,
 				417C362125E14E3B005C2C4C /* CamerasViewController.swift */,
 				41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */,
+				410EE1A625EBCD19007B9620 /* CameraView.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */,
 				4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */,
 				4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */,
+				410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,23 +18,8 @@
                     <view key="view" contentMode="scaleToFill" id="3wz-EY-HrB">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olb-yZ-Pee">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FTg-nc-yBH"/>
-                        <constraints>
-                            <constraint firstItem="olb-yZ-Pee" firstAttribute="top" secondItem="3wz-EY-HrB" secondAttribute="top" id="4Y6-Gh-f4U"/>
-                            <constraint firstAttribute="bottom" secondItem="olb-yZ-Pee" secondAttribute="bottom" id="7Ax-By-fHP"/>
-                            <constraint firstAttribute="trailing" secondItem="olb-yZ-Pee" secondAttribute="trailing" id="e3Z-wQ-J8k"/>
-                            <constraint firstItem="olb-yZ-Pee" firstAttribute="leading" secondItem="3wz-EY-HrB" secondAttribute="leading" id="jlT-dw-Vgk"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cameraView" destination="olb-yZ-Pee" id="5Gn-AS-zEs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wi-Zi-VRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
