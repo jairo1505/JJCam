@@ -12,7 +12,7 @@ class Server {
     public static let shared = Server()
     private let server = HttpServer()
     private var deviceEditJson: String?
-    private var deviceEditId: Int?
+    private var deviceEditId: UUID?
     
     func start() {
         do {
@@ -53,7 +53,7 @@ class Server {
                     if self.deviceEditJson?.isEmpty ?? true {
                         DeviceManager.shared.save(json: json)
                     } else {
-                        DeviceManager.shared.edit(id: self.deviceEditId ?? 0, json: json)
+                        DeviceManager.shared.edit(id: self.deviceEditId ?? UUID(), json: json)
                     }
                     return HttpResponse.ok(.text("{\"status\": 200}"))
                 } else {
@@ -132,7 +132,7 @@ class Server {
 }
 
 struct Device: Codable {
-    let id: Int?
+    let id: UUID?
     let deviceProtocol: DeviceProtocol
     let name: String
     let ip: String

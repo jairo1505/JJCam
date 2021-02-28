@@ -3,6 +3,7 @@
     <device id="appleTV" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,23 +17,40 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG2-2t-N4b">
-                        <rect key="frame" x="16" y="16" width="831" height="38"/>
+                        <rect key="frame" x="16" y="16" width="761" height="38"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="15z-5p-LXt">
+                        <rect key="frame" x="793" y="10" width="54" height="50.5"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="bza-zR-W9x"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="15z-5p-LXt" firstAttribute="leading" secondItem="mG2-2t-N4b" secondAttribute="trailing" constant="16" id="011-y7-LeQ"/>
+                    <constraint firstAttribute="trailing" secondItem="15z-5p-LXt" secondAttribute="trailing" constant="16" id="DoI-NX-ue2"/>
                     <constraint firstAttribute="bottom" secondItem="mG2-2t-N4b" secondAttribute="bottom" constant="16" id="Iew-Ml-d1R"/>
                     <constraint firstItem="mG2-2t-N4b" firstAttribute="top" secondItem="ieb-vx-uIg" secondAttribute="top" constant="16" id="J68-W0-fYP"/>
                     <constraint firstItem="mG2-2t-N4b" firstAttribute="leading" secondItem="ieb-vx-uIg" secondAttribute="leading" constant="16" id="Jo3-fS-eAT"/>
-                    <constraint firstAttribute="trailing" secondItem="mG2-2t-N4b" secondAttribute="trailing" constant="16" id="wox-1I-pKx"/>
+                    <constraint firstAttribute="bottom" secondItem="15z-5p-LXt" secondAttribute="bottom" constant="8" id="ZcL-Mo-88v"/>
+                    <constraint firstItem="15z-5p-LXt" firstAttribute="top" secondItem="ieb-vx-uIg" secondAttribute="top" constant="8" id="asV-Hz-Dfa"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkImg" destination="15z-5p-LXt" id="2KW-rL-jiH"/>
                 <outlet property="title" destination="mG2-2t-N4b" id="Jik-zM-PTY"/>
             </connections>
             <point key="canvasLocation" x="891.5" y="-124"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

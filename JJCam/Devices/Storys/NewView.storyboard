@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wTE-HF-ZNc">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New View View Controller-->
+        <scene sceneID="eib-LM-DKb">
+            <objects>
+                <viewController id="wTE-HF-ZNc" customClass="NewViewViewController" customModule="JJCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cGU-VJ-lOA"/>
+                        <viewControllerLayoutGuide type="bottom" id="zuW-6r-boV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pmU-fx-qur">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuY-Vb-iH6">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                                <items>
+                                    <navigationItem title="Nova Visualização" id="J0q-aS-Pak">
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="OtQ-SB-s08">
+                                            <connections>
+                                                <action selector="save:" destination="wTE-HF-ZNc" id="vhi-a3-ScA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-7Z-dcz">
+                                <rect key="frame" x="493" y="165" width="1347" height="47"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da visualização:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NH2-fn-aQZ">
+                                <rect key="frame" x="80" y="165" width="373" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="M14-hW-g5b">
+                                <rect key="frame" x="80" y="298" width="1760" height="722"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione as câmeras:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSM-ui-hLw">
+                                <rect key="frame" x="774" y="232" width="372" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mbs-nt-UYj"/>
+                        <constraints>
+                            <constraint firstItem="mbs-nt-UYj" firstAttribute="trailing" secondItem="M14-hW-g5b" secondAttribute="trailing" id="3Lt-5F-K8W"/>
+                            <constraint firstItem="M14-hW-g5b" firstAttribute="top" secondItem="oSM-ui-hLw" secondAttribute="bottom" constant="20" id="4WI-uf-c3P"/>
+                            <constraint firstItem="PVK-7Z-dcz" firstAttribute="leading" secondItem="NH2-fn-aQZ" secondAttribute="trailing" constant="40" id="Chv-5P-TZe"/>
+                            <constraint firstItem="NH2-fn-aQZ" firstAttribute="top" secondItem="cuY-Vb-iH6" secondAttribute="bottom" constant="20" id="GEM-4k-QWi"/>
+                            <constraint firstAttribute="trailing" secondItem="cuY-Vb-iH6" secondAttribute="trailing" id="IXZ-Mo-dFW"/>
+                            <constraint firstItem="cuY-Vb-iH6" firstAttribute="top" secondItem="pmU-fx-qur" secondAttribute="top" id="WAJ-zp-6ei"/>
+                            <constraint firstItem="cuY-Vb-iH6" firstAttribute="leading" secondItem="pmU-fx-qur" secondAttribute="leading" id="XRA-pi-twD"/>
+                            <constraint firstItem="oSM-ui-hLw" firstAttribute="top" secondItem="PVK-7Z-dcz" secondAttribute="bottom" constant="20" id="glp-mB-gi6"/>
+                            <constraint firstItem="mbs-nt-UYj" firstAttribute="trailing" secondItem="PVK-7Z-dcz" secondAttribute="trailing" id="jQa-Wc-5Ww"/>
+                            <constraint firstItem="M14-hW-g5b" firstAttribute="leading" secondItem="mbs-nt-UYj" secondAttribute="leading" id="kSg-Z7-9sA"/>
+                            <constraint firstItem="PVK-7Z-dcz" firstAttribute="top" secondItem="cuY-Vb-iH6" secondAttribute="bottom" constant="20" id="kht-6T-0u0"/>
+                            <constraint firstItem="oSM-ui-hLw" firstAttribute="centerX" secondItem="pmU-fx-qur" secondAttribute="centerX" id="mmf-uM-jQC"/>
+                            <constraint firstItem="NH2-fn-aQZ" firstAttribute="leading" secondItem="mbs-nt-UYj" secondAttribute="leading" id="tD3-Qq-CLj"/>
+                            <constraint firstItem="mbs-nt-UYj" firstAttribute="bottom" secondItem="M14-hW-g5b" secondAttribute="bottom" id="xD3-Di-sbg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameView" destination="PVK-7Z-dcz" id="7Lw-fe-0Lc"/>
+                        <outlet property="navigationBar" destination="cuY-Vb-iH6" id="9mH-fQ-k04"/>
+                        <outlet property="selectorLabel" destination="oSM-ui-hLw" id="034-Hy-PaO"/>
+                        <outlet property="tableView" destination="M14-hW-g5b" id="yaW-jJ-tkl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEu-Kd-Tth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="132"/>
+        </scene>
+    </scenes>
+</document>

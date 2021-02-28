@@ -29,7 +29,7 @@ class DevicesTableViewController: UITableViewController {
     @objc func longTouch() {
         let alert = UIAlertController(title: "Dispositivo: \(deviceManager.devices[currentIndexFocus.row].name)", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
-            self.deviceManager.remove(id: self.deviceManager.devices[self.currentIndexFocus.row].id ?? 0) {
+            self.deviceManager.remove(id: self.deviceManager.devices[self.currentIndexFocus.row].id ?? UUID()) {
                 self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
             }
         }))

@@ -11,6 +11,8 @@
 		41034FB225DC0CEA00109D3A /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41034FB125DC0CEA00109D3A /* About.storyboard */; };
 		41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41034FB425DC0DBF00109D3A /* AboutViewController.swift */; };
 		410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1A625EBCD19007B9620 /* CameraView.swift */; };
+		410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410EE1A925EC02EB007B9620 /* NewView.storyboard */; };
+		410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1AC25EC047A007B9620 /* NewViewViewController.swift */; };
 		4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1525C84CEA00DDE4C9 /* Server.swift */; };
 		4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */; };
 		412A157025C5A070007C9141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A156F25C5A070007C9141 /* AppDelegate.swift */; };
@@ -62,6 +64,8 @@
 		41034FB125DC0CEA00109D3A /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		41034FB425DC0DBF00109D3A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		410EE1A625EBCD19007B9620 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		410EE1A925EC02EB007B9620 /* NewView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewView.storyboard; sourceTree = "<group>"; };
+		410EE1AC25EC047A007B9620 /* NewViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewViewController.swift; sourceTree = "<group>"; };
 		4115FC1525C84CEA00DDE4C9 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
 		412A156C25C5A070007C9141 /* JJCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,7 @@
 				417C362125E14E3B005C2C4C /* CamerasViewController.swift */,
 				41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */,
 				410EE1A625EBCD19007B9620 /* CameraView.swift */,
+				410EE1AC25EC047A007B9620 /* NewViewViewController.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				41803B1925DAF6320070803F /* NewDevice.storyboard */,
 				417C361A25E14C16005C2C4C /* Cameras.storyboard */,
 				41DF99E825E15733006F3CDE /* WatchCamera.storyboard */,
+				410EE1A925EC02EB007B9620 /* NewView.storyboard */,
 			);
 			path = Storys;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 				41803B1A25DAF6320070803F /* NewDevice.storyboard in Resources */,
 				41803B0625DAE4770070803F /* DeviceTableViewCell.xib in Resources */,
 				412A157525C5A070007C9141 /* Main.storyboard in Resources */,
+				410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +494,7 @@
 				41803AF925DAB3030070803F /* DeviceManager.swift in Sources */,
 				41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */,
 				41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */,
+				410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */,
 				41DF99EC25E1575C006F3CDE /* WatchCameraViewController.swift in Sources */,
 				41EB623425CB107B00DFAF54 /* UIViewExtension.swift in Sources */,
 				415846A925DC4E1300EAEF4D /* JJCam.xcdatamodeld in Sources */,
