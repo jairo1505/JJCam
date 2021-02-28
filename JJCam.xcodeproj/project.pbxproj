@@ -20,6 +20,7 @@
 		412A157A25C5A072007C9141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412A157925C5A072007C9141 /* Assets.xcassets */; };
 		412A157D25C5A072007C9141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412A157B25C5A072007C9141 /* LaunchScreen.storyboard */; };
 		415846A925DC4E1300EAEF4D /* JJCam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 415846A725DC4E1300EAEF4D /* JJCam.xcdatamodeld */; };
+		4167B4A825EC54580072C054 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4167B4A725EC54580072C054 /* Utils.swift */; };
 		417C361B25E14C16005C2C4C /* Cameras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417C361A25E14C16005C2C4C /* Cameras.storyboard */; };
 		417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C362125E14E3B005C2C4C /* CamerasViewController.swift */; };
 		41803AF925DAB3030070803F /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803AF825DAB3030070803F /* DeviceManager.swift */; };
@@ -75,6 +76,7 @@
 		412A157C25C5A072007C9141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		412A157E25C5A072007C9141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		415846A825DC4E1300EAEF4D /* JJCam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJCam.xcdatamodel; sourceTree = "<group>"; };
+		4167B4A725EC54580072C054 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		417C361A25E14C16005C2C4C /* Cameras.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cameras.storyboard; sourceTree = "<group>"; };
 		417C362125E14E3B005C2C4C /* CamerasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamerasViewController.swift; sourceTree = "<group>"; };
 		41803AF825DAB3030070803F /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				41803AF825DAB3030070803F /* DeviceManager.swift */,
+				4167B4A725EC54580072C054 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				41803B0925DAE4C40070803F /* DeviceTableViewCell.swift in Sources */,
 				412A157025C5A070007C9141 /* AppDelegate.swift in Sources */,
 				41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */,
+				4167B4A825EC54580072C054 /* Utils.swift in Sources */,
 				41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */,
 				41803B1725DAF5B70070803F /* SettingsTableViewController.swift in Sources */,
 				417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */,

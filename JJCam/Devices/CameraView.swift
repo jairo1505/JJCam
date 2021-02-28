@@ -29,20 +29,17 @@ class CameraView: UIView {
         player.play()
     }
     
-    open func stop() {
-        player.stop()
+    open func setNoVideo() {
+        let frame = CGRect(x: (self.frame.width/2)-300, y: (self.frame.height/2)-30, width: 600, height: 60)
+        let label = Utils.getLabel(title: "Sem Vídeo", frame: frame, size: nil)
+        self.addSubview(label)
+        UIView.animate(withDuration: 1.0, animations: {
+            label.alpha = 1
+        })
     }
     
-    private func getLabel(title: String, frame: CGRect, isHidden: Bool? = true, size: CGFloat?) -> UILabel {
-        let label = UILabel(frame: frame)
-        label.text = title
-        if let size = size {
-            label.font = UIFont.systemFont(ofSize: size)
-        }
-        label.textAlignment = .center
-        label.textColor = UIColor.white
-        label.alpha = (isHidden ?? true) ? 0 : 1
-        return label
+    open func stop() {
+        player.stop()
     }
     
     private func showIndicatorView(camView: UIView) -> UIActivityIndicatorView {
@@ -60,10 +57,10 @@ extension CameraView: VLCMediaPlayerDelegate {
         switch player.state {
         case .error, .stopped:
             let frame1 = CGRect(x: (camView.frame.width/2)-500, y: (camView.frame.height/2)-50, width: 1000, height: 60)
-            let label1 = getLabel(title: "🤕", frame: frame1, size: 120)
+            let label1 = Utils.getLabel(title: "🤕", frame: frame1, size: 120)
             self.addSubview(label1)
             let frame2 = CGRect(x: (camView.frame.width/2)-500, y: (camView.frame.height/2)+50, width: 1000, height: 60)
-            let label2 = getLabel(title: "Ops! Tivemos um problema.", frame: frame2, size: nil)
+            let label2 = Utils.getLabel(title: "Ops! Tivemos um problema.", frame: frame2, size: nil)
             self.addSubview(label2)
             UIView.animate(withDuration: 1.0, animations: {
                 self.indicator.alpha = 0

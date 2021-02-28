@@ -111,15 +111,15 @@ extension CamerasViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
+        story.indexDevice = index
         if indexPath.section == 0 {
-            
+            story.cameras = views[indexPath.row].cameras
         } else {
-            guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
-            story.indexDevice = index
-            story.indexCamera = indexPath.row + 1
-            present(story, animated: true, completion: nil)
-            tableView.deselectRow(at: indexPath, animated: false)
+            story.cameras = [indexPath.row + 1]
         }
+        present(story, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
