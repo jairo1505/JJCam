@@ -13,6 +13,9 @@ class NewDeviceViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var lbInfo: UILabel!
     @IBOutlet weak var img_qrcode: UIImageView!
+    @IBOutlet weak var tokenView: UIView!
+    
+    private var circularView: CircularProgressView!
     
     public var device: Device?
     
@@ -31,9 +34,17 @@ class NewDeviceViewController: UIViewController {
             self.server.start()
         }
         
-        lbInfo.text = "ou digite: http://\(server.getIP()):\(server.getPort())/\n\nCódigo de verificação: \(VerificationCode.shared.generateCode())"
+        lbInfo.text = "ou digite: http://\(server.getIP()):\(server.getPort())/"
         let image = generateQRCode(from: "http://\(server.getIP()):\(server.getPort())/")
         img_qrcode.image = image
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        circularView = CircularProgressView(frame: CGRect(x: view.frame.origin.x/2, y: view.frame.origin.y/2, width: view.frame.size.width/2, height: view.frame.size.height-120))
+        circularView.delegate = self
+        tokenView.addSubview(circularView)
+        circularView.setText("\(VerificationCode.shared.generateCode())")
+        circularView.progressAnimation(duration: 30)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,4 +67,11 @@ class NewDeviceViewController: UIViewController {
         return nil
     }
 
+}
+
+extension NewDeviceViewController: CircularProgressViewDelegate {
+    func didFinishAnimation() {
+        circularView.setText("\(VerificationCode.shared.generateCode())")
+        circularView.progressAnimation(duration: 30)
+    }
 }

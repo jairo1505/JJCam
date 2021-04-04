@@ -13,6 +13,7 @@
 		410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1A625EBCD19007B9620 /* CameraView.swift */; };
 		410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410EE1A925EC02EB007B9620 /* NewView.storyboard */; };
 		410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1AC25EC047A007B9620 /* NewViewViewController.swift */; };
+		4113FF762619FA9C0055428F /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113FF752619FA9C0055428F /* CircularProgressView.swift */; };
 		4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1525C84CEA00DDE4C9 /* Server.swift */; };
 		4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */; };
 		412A157025C5A070007C9141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A156F25C5A070007C9141 /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		410EE1A625EBCD19007B9620 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		410EE1A925EC02EB007B9620 /* NewView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewView.storyboard; sourceTree = "<group>"; };
 		410EE1AC25EC047A007B9620 /* NewViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewViewController.swift; sourceTree = "<group>"; };
+		4113FF752619FA9C0055428F /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		4115FC1525C84CEA00DDE4C9 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
 		412A156C25C5A070007C9141 /* JJCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +232,7 @@
 			children = (
 				41803AF825DAB3030070803F /* DeviceManager.swift */,
 				4167B4A725EC54580072C054 /* Utils.swift */,
+				4113FF752619FA9C0055428F /* CircularProgressView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			files = (
 				41803AF925DAB3030070803F /* DeviceManager.swift in Sources */,
 				41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */,
+				4113FF762619FA9C0055428F /* CircularProgressView.swift in Sources */,
 				41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */,
 				410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */,
 				41DF99EC25E1575C006F3CDE /* WatchCameraViewController.swift in Sources */,
