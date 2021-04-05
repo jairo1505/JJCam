@@ -40,7 +40,7 @@ class DeviceManager {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Devices")
-            request.predicate = NSPredicate(format: "id == \(id)")
+            request.predicate = NSPredicate(format: "id == \"\(id)\"")
             request.returnsObjectsAsFaults = false
             do {
                 let result = try context.fetch(request)
