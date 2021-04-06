@@ -35,6 +35,7 @@
 		41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */; };
 		41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B2125DAF7B40070803F /* SettingsTableViewCell.swift */; };
 		41803B2525DAF7C80070803F /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41803B2425DAF7C80070803F /* SettingsTableViewCell.xib */; };
+		41941BB4261B985700AE9C06 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */; };
 		41DF99C025E152DE006F3CDE /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */; };
 		41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */; };
 		41DF99C625E155E6006F3CDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DF99C525E155E6006F3CDE /* AudioToolbox.framework */; };
@@ -92,6 +93,7 @@
 		41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceViewController.swift; sourceTree = "<group>"; };
 		41803B2125DAF7B40070803F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		41803B2425DAF7C80070803F /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
 		41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
 		41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTableViewCell.swift; sourceTree = "<group>"; };
 		41DF99C525E155E6006F3CDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				41EB623325CB107B00DFAF54 /* UIViewExtension.swift */,
+				41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */,
 				4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */,
 				4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */,
+				41941BB4261B985700AE9C06 /* NSMutableAttributedStringExtension.swift in Sources */,
 				410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZD56B38SA3;
+				DEVELOPMENT_TEAM = X32H5H3K5C;
 				INFOPLIST_FILE = JJCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -684,7 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZD56B38SA3;
+				DEVELOPMENT_TEAM = X32H5H3K5C;
 				INFOPLIST_FILE = JJCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

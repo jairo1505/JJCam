@@ -49,6 +49,7 @@ class NewDeviceViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        circularView = nil
         server.stop()
     }
 
@@ -71,7 +72,9 @@ class NewDeviceViewController: UIViewController {
 
 extension NewDeviceViewController: CircularProgressViewDelegate {
     func didFinishAnimation() {
-        circularView.setText("\(VerificationCode.shared.generateCode())")
-        circularView.progressAnimation(duration: 30)
+        if circularView != nil {
+            circularView.setText("\(VerificationCode.shared.generateCode())")
+            circularView.progressAnimation(duration: 30)
+        }
     }
 }

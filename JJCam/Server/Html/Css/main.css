@@ -16,6 +16,11 @@ input:not(.browser-default):focus:not([readonly]) {
     box-shadow: 0 1px 0 0 #007FFF !important;
 }
 
+input:disabled {
+    border-bottom: 1px solid #9e9e9e !important;
+    color: #9e9e9e !important;
+}
+
 .nav-title-custom {
     color: #007FFF !important;
     white-space: nowrap;

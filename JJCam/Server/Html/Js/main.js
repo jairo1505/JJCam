@@ -9,12 +9,13 @@ function getData() {
             json = JSON.parse(data)
             if(json.status == 200 && json.action == "edit") {
                 $('#titlePage').html("Editar " + json.name);
-                $('#deviceProtocol').val(json.deviceProtocol)
-                $('#deviceName').val(json.name)
-                $('#deviceIP').val(json.ip)
-                $('#devicePort').val(json.port)
-                $('#deviceUser').val(json.user)
-                $('#channels').val(json.channels)
+                $('#deviceProtocol').val(json.deviceProtocol);
+                $('#deviceName').val(json.name);
+                $('#deviceIP').val(json.ip);
+                $('#devicePort').val(json.port);
+                $('#deviceUser').val(json.user);
+                $('#channels').val(json.channels);
+                $('#channels').prop('disabled', true);
             }
         },
         error: function (error) {

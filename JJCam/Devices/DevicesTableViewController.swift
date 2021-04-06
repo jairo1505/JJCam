@@ -56,16 +56,27 @@ class DevicesTableViewController: UITableViewController {
             cell.title.text = "Nenhum dispositivo cadastrado!"
             cell.subtitle.text = ""
         } else {
-            cell.title.text = deviceManager.devices[indexPath.row].name
-            cell.subtitle.text = "\(deviceManager.devices[indexPath.row].channels) canais | \(deviceManager.devices[indexPath.row].deviceProtocol.rawValue.lowercased())"
+            let attributed = NSMutableAttributedString()
+            attributed.append(image: deviceManager.devices[indexPath.row].channels == 1 ? UIImage(systemName: "video.fill")?.withTintColor(.gray) : UIImage(systemName: "externaldrive.fill")?.withTintColor(.gray), bounds: CGRect(x: -5, y: .zero, width: 40, height: 30))
+            attributed.append(string: deviceManager.devices[indexPath.row].name)
+            cell.title.attributedText = attributed
+            cell.subtitle.text = "\(deviceManager.devices[indexPath.row].channels == 1 ? "Câmera" : "DVR de \(deviceManager.devices[indexPath.row].channels) canais") | \(deviceManager.devices[indexPath.row].deviceProtocol.rawValue.lowercased())"
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let story = UIStoryboard(name: "Cameras", bundle: nil).instantiateInitialViewController() as? CamerasViewController else { return }
-        story.index = indexPath.row
-        present(story, animated: true, completion: nil)    }
+        if deviceManager.devices[indexPath.row].channels == 1 {
+            guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
+            story.cameras = [1]
+            story.indexDevice = indexPath.row
+            present(story, animated: true, completion: nil)
+        } else {
+            guard let story = UIStoryboard(name: "Cameras", bundle: nil).instantiateInitialViewController() as? CamerasViewController else { return }
+            story.index = indexPath.row
+            present(story, animated: true, completion: nil)
+        }
+    }
     
     override func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if context.previouslyFocusedIndexPath != nil {
