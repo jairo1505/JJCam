@@ -37,6 +37,7 @@ class NewViewViewController: UIViewController {
     }
     
     private var cameras: [Int] = []
+    private let limit = 9
     public var indexDevice = 0
     public var delegate: NewViewViewControllerDelegate?
     
@@ -46,6 +47,8 @@ class NewViewViewController: UIViewController {
         tableView.register(UINib(nibName: "CameraTableViewCell", bundle: nil), forCellReuseIdentifier: "CameraTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        selectorLabel.text = "Selecione as câmeras na ordem desejada: (Limite máximo: \(limit))"
     }
 
 }
@@ -58,6 +61,8 @@ extension NewViewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CameraTableViewCell", for: indexPath) as? CameraTableViewCell else { return UITableViewCell() }
         cell.title.text = "Câmera \(indexPath.row + 1)"
+        let cam = cameras.filter({$0 == indexPath.row + 1})
+        cell.checkImg.alpha = cam.count > 0 ? 1 : 0
         return cell
     }
 }
@@ -84,8 +89,17 @@ extension NewViewViewController: UITableViewDelegate {
                 return
             }
         }
-        
-        cameras.append(indexPath.row + 1)
-        cell.animateCheck(show: true)
+        if cameras.count < limit {
+            cameras.append(indexPath.row + 1)
+            cell.animateCheck(show: true)
+        } else {
+            UIView.animate(withDuration: 0.25) {
+                self.selectorLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2);
+            } completion: { completed in
+                UIView.animate(withDuration: 0.25) {
+                    self.selectorLabel.transform = CGAffineTransform(scaleX: 1, y: 1);
+                }
+            }
+        }
     }
 }
