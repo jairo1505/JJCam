@@ -142,10 +142,10 @@ struct Device: Codable {
     let channels: Int
     let code: Int
     
-    func getProtocol(channel: Int) -> String {
+    func getProtocol(channel: Int, quality: Quality) -> String {
         switch deviceProtocol {
         case .intelbras:
-            return "rtsp://\(user):\(password)@\(ip):\(port)/cam/realmonitor?channel=\(channel)&subtype=0"
+            return "rtsp://\(user):\(password)@\(ip):\(port)/cam/realmonitor?channel=\(channel)&subtype=\(quality.rawValue)"
         case .hikvision:
             return "rtsp://\(user):\(password)@\(ip):\(port)/Streaming/Channels/\(channel)01/"
         default:
@@ -158,4 +158,9 @@ enum DeviceProtocol: String, Codable {
     case intelbras = "INTELBRAS"
     case hikvision = "HIKVISION"
     case other = "OTHER"
+}
+
+enum Quality: Int {
+    case high = 0
+    case low = 1
 }
