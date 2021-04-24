@@ -70,7 +70,7 @@ class WatchCameraViewController: UIViewController {
         let yBase = view.frame.height/divider
         let cameraView = CameraView(frame: CGRect(x: x == 0 ? 0 : xBase*x, y: y == 0 ? 0 : yBase*y, width: view.frame.width/divider, height: view.frame.height/divider))
         if cameraIndex < cameras.count {
-            cameraView.setUrl(url: DeviceManager.shared.devices[indexDevice].getProtocol(channel: cameras[cameraIndex], quality: cameras.count >= 4 ? .low : .high))
+            cameraView.setUrl(url: DeviceManager.shared.devices[indexDevice].getProtocol(channel: cameras[cameraIndex], quality: cameras.count > 1 ? .low : .high))
         } else {
             cameraView.setNoVideo()
         }
