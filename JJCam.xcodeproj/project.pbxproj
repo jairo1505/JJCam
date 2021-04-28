@@ -61,6 +61,7 @@
 		41EB622D25CB0D8200DFAF54 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622C25CB0D8200DFAF54 /* main.css */; };
 		41EB623025CB0D9100DFAF54 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622F25CB0D9100DFAF54 /* main.js */; };
 		41EB623425CB107B00DFAF54 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB623325CB107B00DFAF54 /* UIViewExtension.swift */; };
+		41FD73D62638D2FB00454A82 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD73D52638D2FB00454A82 /* UIDeviceExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		41EB622C25CB0D8200DFAF54 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		41EB622F25CB0D9100DFAF54 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		41EB623325CB107B00DFAF54 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		41FD73D52638D2FB00454A82 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		61B869FC29B5A7B7D953D446 /* Pods-JJCam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJCam.debug.xcconfig"; path = "Target Support Files/Pods-JJCam/Pods-JJCam.debug.xcconfig"; sourceTree = "<group>"; };
 		644F223B5608E2062BED2EF1 /* Pods-testSwifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwifter.release.xcconfig"; path = "Target Support Files/Pods-testSwifter/Pods-testSwifter.release.xcconfig"; sourceTree = "<group>"; };
 		B5E3A8FBE77403BB39C27DCE /* Pods-testSwifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwifter.debug.xcconfig"; path = "Target Support Files/Pods-testSwifter/Pods-testSwifter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				41EB623325CB107B00DFAF54 /* UIViewExtension.swift */,
 				41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */,
+				41FD73D52638D2FB00454A82 /* UIDeviceExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */,
 				4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */,
 				4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */,
+				41FD73D62638D2FB00454A82 /* UIDeviceExtension.swift in Sources */,
 				41941BB4261B985700AE9C06 /* NSMutableAttributedStringExtension.swift in Sources */,
 				410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */,
 			);
@@ -678,6 +682,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.1;
 			};
 			name = Debug;
 		};
@@ -698,6 +703,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.1;
 			};
 			name = Release;
 		};

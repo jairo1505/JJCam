@@ -88,7 +88,7 @@ extension CamerasViewController: UITableViewDataSource {
             if views.count != 0 {
                 return "Visualizações"
             } else {
-                return nil
+                return ""
             }
         } else {
             return "Cameras"
@@ -113,11 +113,7 @@ extension CamerasViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
         story.indexDevice = index
-        if indexPath.section == 0 {
-            story.cameras = views[indexPath.row].cameras
-        } else {
-            story.cameras = [indexPath.row + 1]
-        }
+        story.index = indexPath.section == 0 ? indexPath.row : indexPath.row + views.count
         present(story, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: false)
     }

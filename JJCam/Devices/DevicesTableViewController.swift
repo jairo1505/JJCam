@@ -68,7 +68,7 @@ class DevicesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if deviceManager.devices[indexPath.row].channels == 1 {
             guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
-            story.cameras = [1]
+            story.index = 0
             story.indexDevice = indexPath.row
             present(story, animated: true, completion: nil)
         } else {

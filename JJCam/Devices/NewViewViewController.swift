@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol NewViewViewControllerDelegate: class {
+protocol NewViewViewControllerDelegate: AnyObject {
     func didSaveNewView()
 }
 
@@ -37,7 +37,7 @@ class NewViewViewController: UIViewController {
     }
     
     private var cameras: [Int] = []
-    private let limit = 9
+    private var limit = 4
     public var indexDevice = 0
     public var delegate: NewViewViewControllerDelegate?
     
@@ -47,6 +47,17 @@ class NewViewViewController: UIViewController {
         tableView.register(UINib(nibName: "CameraTableViewCell", bundle: nil), forCellReuseIdentifier: "CameraTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        switch UIDevice.DeviceName.init(rawValue: UIDevice.modelName) {
+        case .appleTv4:
+            limit = 4
+        case .appleTv4K:
+            limit = 9
+        case .appleTv4K2:
+            limit = 16
+        default:
+            limit = 4
+        }
         
         selectorLabel.text = "Selecione as câmeras na ordem desejada: (Limite máximo: \(limit))"
     }
