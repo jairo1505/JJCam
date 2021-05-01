@@ -100,7 +100,18 @@ class Server {
         
         
         server["/api/getDevice"] = { request in
-            return HttpResponse.ok(.text(self.deviceEditJson ?? "{\"status\": 200,\"action\":\"add\"}"))
+            let data = Data(request.body)
+            do {
+                let json = try JSONDecoder().decode(DeviceToken.self, from: data)
+                if self.token == json.token {
+                    return HttpResponse.ok(.text(self.deviceEditJson ?? "{\"status\": 200,\"action\":\"add\"}"))
+                } else {
+                    return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Token inválido!\"}"))
+                }
+            } catch let error {
+                print(error.localizedDescription)
+                return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Requisição mal formada!\"}"))
+            }
         }
         
         server["/files/:path"] = directoryBrowser("/")
@@ -160,11 +171,17 @@ class Server {
     }
     
     func stop() {
+        deviceConnected = ""
+        token = ""
         server.stop()
     }
     
     struct DeviceAuthenticate: Decodable {
         let code: Int
+    }
+    
+    struct DeviceToken: Decodable {
+        let token: String
     }
 }
 

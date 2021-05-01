@@ -12,7 +12,7 @@ class VerificationCode {
     private var code = 0
     
     func generateCode() -> Int {
-        code = Int.random(in: 1000...9999)
+        code = Int.random(in: 100000...999999)
         return code
     }
     

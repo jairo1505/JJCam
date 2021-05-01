@@ -1,9 +1,13 @@
 const urlServer = window.location.origin;
-var token = "";
 
 function init() {
-    $('#authenticate').show();
-    $('#titlePage').html("Autenticação");
+    if (localStorage.getItem("token") == null) {
+        $('#authenticate').show();
+        $('#titlePage').html("Autenticação");
+    } else {
+        $('#bodyCustom').show();
+        getData();
+    }
 }
 
 function authenticate() {
@@ -19,7 +23,7 @@ function authenticate() {
             data: JSON.stringify(authenticate),
             success: function (data) {
                 if(data.status == 200) {
-                    token = data.token;
+                    localStorage.setItem("token", data.token);
                     $('#authenticate').hide();
                     $('#titlePage').html("Adicionar dispositivo");
                     $('#bodyCustom').show();
@@ -37,12 +41,17 @@ function authenticate() {
 }
 
 function getData() {
+    var authenticate = {
+        token: localStorage.getItem("token")
+    }
     $.ajax({
         type: "POST",
         url: urlServer+"/api/getDevice",
         crossDomain: true,
+        dataType: "JSON",
+        data: JSON.stringify(authenticate),
         success: function (data) {
-            json = JSON.parse(data)
+            json = data
             if(json.status == 200 && json.action == "edit") {
                 $('#titlePage').html("Editar " + json.name);
                 $('#deviceProtocol').val(json.deviceProtocol);
@@ -56,6 +65,7 @@ function getData() {
             }
         },
         error: function (error) {
+            localStorage.removeItem("token");
             $('#bodyCustom').html("<br/><br/><h5 align='center' style='color: white;'>😕<br/>Ops, tivemos um problema!</h5>");
         }
     });
@@ -74,7 +84,7 @@ function addDevice() {
             user: $('#deviceUser').val().toString(),
             password: $('#devicePassword').val().toString(),
             channels: parseInt($('#channels').val()),
-            token: token
+            token: localStorage.getItem("token")
         }
         
         $.ajax({
@@ -85,10 +95,12 @@ function addDevice() {
             data: JSON.stringify(device),
             success: function (data) {
                 if(data.status == 200) {
+                    localStorage.removeItem("token");
                     $('#bodyCustom').html("<br/><br/><img src='img/successCircle.svg'/><br/><h5 align='center' style='color: white;'>Dispositivo salvo com sucesso!</h5>");
                 }
             },
             error: function (error) {
+                localStorage.removeItem("token");
                 json = JSON.parse(error.responseText);
                 $('#error').html(json.message);
             }

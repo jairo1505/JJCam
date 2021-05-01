@@ -105,18 +105,18 @@ extension NewDeviceViewController: ServerDelegate {
     
     func didFinish() {
         DispatchQueue.main.async {
-            self.server.stop()
             UIView.animate(withDuration: 1) { [self] in
                 viewDeviceConnected.alpha = .zero
             } completion: { [self] _ in
                 infoImg.image = UIImage(systemName: "checkmark.circle")
-                infoDevice.text = "Dispositivo salvo com sucesso!\n\nEsta página irá fechar automáticamente em 10 segundos"
+                infoDevice.text = "Dispositivo salvo com sucesso!\n\nEsta tela irá fechar automaticamente em 10 segundos"
                 UIView.animate(withDuration: 1) { [self] in
                     viewDeviceConnected.alpha = 1
                 } completion: { _ in
+                    self.server.stop()
                     var index = 9
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                        infoDevice.text = "Dispositivo salvo com sucesso!\n\nEsta página irá fechar automáticamente em \(index) segundos"
+                        infoDevice.text = "Dispositivo salvo com sucesso!\n\nEsta tela irá fechar automaticamente em \(index) segundos"
                         if index == 0 {
                             timer.invalidate()
                             self.dismiss(animated: true, completion: nil)
