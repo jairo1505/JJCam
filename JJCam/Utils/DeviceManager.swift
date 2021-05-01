@@ -78,7 +78,7 @@ class DeviceManager {
                                         user: data.value(forKey: "user") as? String ?? "",
                                         password: data.value(forKey: "password") as? String ?? "",
                                         channels: data.value(forKey: "channels") as? Int ?? 0,
-                                        code: 0)
+                                        token: "")
                     self.devices.append(device)
                 }
                 completion()

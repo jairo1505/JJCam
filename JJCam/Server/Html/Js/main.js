@@ -1,4 +1,40 @@
 const urlServer = window.location.origin;
+var token = "";
+
+function init() {
+    $('#authenticate').show();
+    $('#titlePage').html("Autenticação");
+}
+
+function authenticate() {
+    if ($('#verificationCode').val() != "") {
+        var authenticate = {
+            code: parseInt($('#verificationCode').val())
+        }
+        $.ajax({
+            type: "POST",
+            url: urlServer+"/api/authenticate",
+            crossDomain: true,
+            dataType: "JSON",
+            data: JSON.stringify(authenticate),
+            success: function (data) {
+                if(data.status == 200) {
+                    token = data.token;
+                    $('#authenticate').hide();
+                    $('#titlePage').html("Adicionar dispositivo");
+                    $('#bodyCustom').show();
+                    getData();
+                }
+            },
+            error: function (error) {
+                json = JSON.parse(error.responseText);
+                $('#errorAuthenticate').html(json.message);
+            }
+        });
+    } else {
+        $('#errorAuthenticate').html("Preencha o campo!");
+    }
+}
 
 function getData() {
     $.ajax({
@@ -14,6 +50,7 @@ function getData() {
                 $('#deviceIP').val(json.ip);
                 $('#devicePort').val(json.port);
                 $('#deviceUser').val(json.user);
+                $('#devicePassword').val(json.password);
                 $('#channels').val(json.channels);
                 $('#channels').prop('disabled', true);
             }
@@ -27,7 +64,7 @@ function getData() {
 function addDevice() {
     if ($('#deviceName').val() != "" && $('#deviceIP').val() != ""
         && $('#devicePort').val() != "" && $('#deviceUser').val() != ""
-        && $('#devicePassword').val() != "" && $('#channels').val() != "" && $('#verificationCode').val() != "") {
+        && $('#devicePassword').val() != "" && $('#channels').val() != "") {
         
         var device = {
             deviceProtocol: $('#deviceProtocol').val().toString(),
@@ -37,14 +74,14 @@ function addDevice() {
             user: $('#deviceUser').val().toString(),
             password: $('#devicePassword').val().toString(),
             channels: parseInt($('#channels').val()),
-            code: parseInt($('#verificationCode').val())
+            token: token
         }
         
         $.ajax({
             type: "POST",
             url: urlServer+"/api/saveDevice",
             crossDomain: true,
-                dataType: "JSON",
+            dataType: "JSON",
             data: JSON.stringify(device),
             success: function (data) {
                 if(data.status == 200) {
@@ -61,4 +98,4 @@ function addDevice() {
     }
 }
 
-getData();
+init();

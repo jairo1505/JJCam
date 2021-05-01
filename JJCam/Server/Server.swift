@@ -8,11 +8,21 @@
 import Foundation
 import Swifter
 
+protocol ServerDelegate {
+    func didConectionDevice(ip: String, details: String)
+    func didFinish()
+}
+
 class Server {
     public static let shared = Server()
     private let server = HttpServer()
     private var deviceEditJson: String?
     private var deviceEditId: UUID?
+    private var token: String = ""
+    
+    public var delegate: ServerDelegate?
+    
+    private var deviceConnected = ""
     
     func start() {
         do {
@@ -25,8 +35,12 @@ class Server {
             var strHtml = try String(contentsOfFile: html ?? "")
             strHtml = strHtml.replacingOccurrences(of: "myCSS", with: strCss)
             strHtml = strHtml.replacingOccurrences(of: "myJS", with: strJs)
-            server["/"] = { request in
-                return HttpResponse.ok(.html(strHtml))
+            server["/"] = { [self] request in
+                if deviceConnected.isEmpty || deviceConnected == request.address {
+                    return HttpResponse.ok(.html(strHtml))
+                } else {
+                    return HttpResponse.unauthorized
+                }
             }
             
             // MARK: - Image success
@@ -49,13 +63,32 @@ class Server {
             do {
                 let json = try JSONDecoder().decode(Device.self, from: data)
                 print(json)
-                if VerificationCode.shared.verificateCode(code: json.code) {
+                if (json.token == self.token) {
                     if self.deviceEditJson?.isEmpty ?? true {
                         DeviceManager.shared.save(json: json)
                     } else {
                         DeviceManager.shared.edit(id: self.deviceEditId ?? UUID(), json: json)
                     }
+                    self.delegate?.didFinish()
                     return HttpResponse.ok(.text("{\"status\": 200}"))
+                } else {
+                    return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Token inválido!\"}"))
+                }
+            } catch let error {
+                print(error.localizedDescription)
+                return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Requisição mal formada!\"}"))
+            }
+        }
+        
+        server["/api/authenticate"] = { [self] request in
+            let data = Data(request.body)
+            do {
+                let json = try JSONDecoder().decode(DeviceAuthenticate.self, from: data)
+                if VerificationCode.shared.verificateCode(code: json.code) {
+                    token = UUID().uuidString
+                    delegate?.didConectionDevice(ip: request.address ?? "", details: request.headers["user-agent"] ?? "")
+                    deviceConnected = request.address ?? ""
+                    return HttpResponse.ok(.text("{\"status\": 200, \"token\":\"\(token)\"}"))
                 } else {
                     return HttpResponse.badRequest(.text("{\"status\": 400, \"message\": \"Código de verificação inválido!\"}"))
                 }
@@ -89,7 +122,7 @@ class Server {
             deviceEditId = nil
             return
         }
-        deviceEditJson = "{\"status\": 200,\"action\":\"edit\",\"name\":\"\(device.name)\",\"deviceProtocol\":\"\(device.deviceProtocol.rawValue)\",\"ip\":\"\(device.ip)\",\"port\":\"\(device.port)\",\"user\":\"\(device.user)\",\"channels\":\"\(device.channels)\"}"
+        deviceEditJson = "{\"status\": 200,\"action\":\"edit\",\"name\":\"\(device.name)\",\"deviceProtocol\":\"\(device.deviceProtocol.rawValue)\",\"ip\":\"\(device.ip)\",\"port\":\"\(device.port)\",\"user\":\"\(device.user)\",\"password\":\"\(device.password)\",\"channels\":\"\(device.channels)\"}"
         deviceEditId = device.id
     }
     
@@ -129,6 +162,10 @@ class Server {
     func stop() {
         server.stop()
     }
+    
+    struct DeviceAuthenticate: Decodable {
+        let code: Int
+    }
 }
 
 struct Device: Codable {
@@ -140,7 +177,7 @@ struct Device: Codable {
     let user: String
     let password: String
     let channels: Int
-    let code: Int
+    let token: String
     
     func getProtocol(channel: Int, quality: Quality) -> String {
         switch deviceProtocol {
