@@ -16,8 +16,8 @@ class DevicesTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "DeviceTableViewCell", bundle: nil), forCellReuseIdentifier: "DeviceTableViewCell")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         deviceManager.get {
             self.tableView.reloadData()
         }

@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-    let settings = ["Adicionar Dispositivo", "Remover todos os dispositivos", "Sobre"]
+    let settings = ["Adicionar Dispositivo", "Remover todos os dispositivos", "Ajuda", "Sobre"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
@@ -47,6 +47,9 @@ class SettingsTableViewController: UITableViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         case 2:
+            guard let segue = UIStoryboard(name: "Help", bundle: nil).instantiateInitialViewController() else { return }
+            self.present(segue, animated: true, completion: nil)
+        case 3:
             guard let segue = UIStoryboard(name: "About", bundle: nil).instantiateInitialViewController() else { return }
             self.present(segue, animated: true, completion: nil)
         default:

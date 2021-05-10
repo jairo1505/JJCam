@@ -46,14 +46,14 @@ class CamerasViewController: UIViewController {
     @objc func longTouch() {
         if currentIndexFocus.section == 0 {
             let alert = UIAlertController(title: "Visualização: \(views[currentIndexFocus.row].name)", message: "", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
-                self.deviceManager.removeView(id: self.views[self.currentIndexFocus.row].id) {
-                    self.views.remove(at: self.currentIndexFocus.row)
-                    self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
+            alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { [self] _ in
+                deviceManager.removeView(id: views[currentIndexFocus.row].id) {
+                    views.remove(at: currentIndexFocus.row)
+                    tableView.reloadSections([0], with: .automatic)
                 }
             }))
             alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
     }
     

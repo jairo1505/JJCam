@@ -13,6 +13,8 @@
 		410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1A625EBCD19007B9620 /* CameraView.swift */; };
 		410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410EE1A925EC02EB007B9620 /* NewView.storyboard */; };
 		410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1AC25EC047A007B9620 /* NewViewViewController.swift */; };
+		41119515263F80F500ACB11C /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41119514263F80F400ACB11C /* Help.storyboard */; };
+		41119517263F810600ACB11C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41119516263F810600ACB11C /* HelpViewController.swift */; };
 		4113FF762619FA9C0055428F /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113FF752619FA9C0055428F /* CircularProgressView.swift */; };
 		4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1525C84CEA00DDE4C9 /* Server.swift */; };
 		4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */; };
@@ -70,6 +72,8 @@
 		410EE1A625EBCD19007B9620 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		410EE1A925EC02EB007B9620 /* NewView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewView.storyboard; sourceTree = "<group>"; };
 		410EE1AC25EC047A007B9620 /* NewViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewViewController.swift; sourceTree = "<group>"; };
+		41119514263F80F400ACB11C /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
+		41119516263F810600ACB11C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		4113FF752619FA9C0055428F /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		4115FC1525C84CEA00DDE4C9 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
@@ -184,6 +188,23 @@
 			path = Story;
 			sourceTree = "<group>";
 		};
+		41119512263F80E000ACB11C /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				41119513263F80E700ACB11C /* Story */,
+				41119516263F810600ACB11C /* HelpViewController.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		41119513263F80E700ACB11C /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				41119514263F80F400ACB11C /* Help.storyboard */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		4115FC1425C84CDF00DDE4C9 /* Server */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +236,7 @@
 		412A156E25C5A070007C9141 /* JJCam */ = {
 			isa = PBXGroup;
 			children = (
+				41119512263F80E000ACB11C /* Help */,
 				41034FAF25DC0CB500109D3A /* About */,
 				41803B0F25DAF4FF0070803F /* Settings */,
 				41803AFC25DAE3C20070803F /* Devices */,
@@ -435,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				412A157D25C5A072007C9141 /* LaunchScreen.storyboard in Resources */,
+				41119515263F80F500ACB11C /* Help.storyboard in Resources */,
 				41DF99E925E15733006F3CDE /* WatchCamera.storyboard in Resources */,
 				41EB622D25CB0D8200DFAF54 /* main.css in Resources */,
 				41DF99C025E152DE006F3CDE /* CameraTableViewCell.xib in Resources */,
@@ -514,6 +537,7 @@
 				41803B0225DAE3FC0070803F /* DevicesTableViewController.swift in Sources */,
 				41803B0925DAE4C40070803F /* DeviceTableViewCell.swift in Sources */,
 				412A157025C5A070007C9141 /* AppDelegate.swift in Sources */,
+				41119517263F810600ACB11C /* HelpViewController.swift in Sources */,
 				41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */,
 				4167B4A825EC54580072C054 /* Utils.swift in Sources */,
 				41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */,
