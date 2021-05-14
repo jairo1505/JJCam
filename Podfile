@@ -6,7 +6,7 @@ target 'JJCam' do
   use_frameworks!
 
   pod 'Swifter', '~> 1.5.0'
-  pod 'TVVLCKit', '~>3.3.15'
+  pod 'TVVLCKit', '~> 3.3.15'
 
   # Pods for JJCam
 

@@ -26,15 +26,26 @@ class Server {
     
     func start() {
         do {
-            // MARK: - Resources site
+            // MARK: - Get resources
             let html = Bundle.main.path(forResource: "home", ofType: "html")
             let css = Bundle.main.path(forResource: "main", ofType: "css")
             let js = Bundle.main.path(forResource: "main", ofType: "js")
+            let materializeCss = Bundle.main.path(forResource: "materialize.min", ofType: "css")
+            let jqueryJs = Bundle.main.path(forResource: "jquery.min", ofType: "js")
+            
+            // MARK: - Convert resourses to string
             let strCss = try String(contentsOfFile: css ?? "")
             let strJs = try String(contentsOfFile: js ?? "")
+            let strMaterializeCss = try String(contentsOfFile: materializeCss ?? "")
+            let strJqueryJs = try String(contentsOfFile: jqueryJs ?? "")
             var strHtml = try String(contentsOfFile: html ?? "")
+            
+            // MARK: - Add resources to the site
             strHtml = strHtml.replacingOccurrences(of: "myCSS", with: strCss)
             strHtml = strHtml.replacingOccurrences(of: "myJS", with: strJs)
+            strHtml = strHtml.replacingOccurrences(of: "materializeCSS", with: strMaterializeCss)
+            strHtml = strHtml.replacingOccurrences(of: "jqueryJS", with: strJqueryJs)
+            
             server["/"] = { [self] request in
                 if deviceConnected.isEmpty || deviceConnected == request.address {
                     return HttpResponse.ok(.html(strHtml))

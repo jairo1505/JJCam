@@ -18,6 +18,8 @@
 		4113FF762619FA9C0055428F /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113FF752619FA9C0055428F /* CircularProgressView.swift */; };
 		4115FC1625C84CEA00DDE4C9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1525C84CEA00DDE4C9 /* Server.swift */; };
 		4115FC1C25C8624C00DDE4C9 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */; };
+		411676A0264F2F6F0098F839 /* materialize.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 4116769F264F2F6F0098F839 /* materialize.min.css */; };
+		411676A2264F33860098F839 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 411676A1264F33860098F839 /* jquery.min.js */; };
 		412A157025C5A070007C9141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A156F25C5A070007C9141 /* AppDelegate.swift */; };
 		412A157525C5A070007C9141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412A157325C5A070007C9141 /* Main.storyboard */; };
 		412A157A25C5A072007C9141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412A157925C5A072007C9141 /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		4113FF752619FA9C0055428F /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		4115FC1525C84CEA00DDE4C9 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		4115FC1B25C8624C00DDE4C9 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
+		4116769F264F2F6F0098F839 /* materialize.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = materialize.min.css; sourceTree = "<group>"; };
+		411676A1264F33860098F839 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		412A156C25C5A070007C9141 /* JJCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		412A156F25C5A070007C9141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		412A157425C5A070007C9141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 		41EB622A25CB0D5300DFAF54 /* Css */ = {
 			isa = PBXGroup;
 			children = (
+				4116769F264F2F6F0098F839 /* materialize.min.css */,
 				41EB622C25CB0D8200DFAF54 /* main.css */,
 			);
 			path = Css;
@@ -358,6 +363,7 @@
 		41EB622B25CB0D5E00DFAF54 /* Js */ = {
 			isa = PBXGroup;
 			children = (
+				411676A1264F33860098F839 /* jquery.min.js */,
 				41EB622F25CB0D9100DFAF54 /* main.js */,
 			);
 			path = Js;
@@ -458,6 +464,7 @@
 			files = (
 				412A157D25C5A072007C9141 /* LaunchScreen.storyboard in Resources */,
 				41119515263F80F500ACB11C /* Help.storyboard in Resources */,
+				411676A2264F33860098F839 /* jquery.min.js in Resources */,
 				41DF99E925E15733006F3CDE /* WatchCamera.storyboard in Resources */,
 				41EB622D25CB0D8200DFAF54 /* main.css in Resources */,
 				41DF99C025E152DE006F3CDE /* CameraTableViewCell.xib in Resources */,
@@ -473,6 +480,7 @@
 				41803B1A25DAF6320070803F /* NewDevice.storyboard in Resources */,
 				41803B0625DAE4770070803F /* DeviceTableViewCell.xib in Resources */,
 				412A157525C5A070007C9141 /* Main.storyboard in Resources */,
+				411676A0264F2F6F0098F839 /* materialize.min.css in Resources */,
 				410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
