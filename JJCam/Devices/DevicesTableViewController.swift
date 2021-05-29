@@ -29,14 +29,16 @@ class DevicesTableViewController: UITableViewController {
     @objc func longTouch() {
         let alert = UIAlertController(title: "Dispositivo: \(deviceManager.devices[currentIndexFocus.row].name)", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
-            self.deviceManager.remove(id: self.deviceManager.devices[self.currentIndexFocus.row].id ?? UUID()) {
-                self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
+            Authentication.shared.goToAuthenticationIfNeeded(viewController: self) {
+                self.deviceManager.remove(id: self.deviceManager.devices[self.currentIndexFocus.row].id ?? UUID()) {
+                    self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
+                }
             }
         }))
         alert.addAction(UIAlertAction(title: "Editar", style: .cancel, handler: { _ in
             guard let story = UIStoryboard(name: "NewDevice", bundle: nil).instantiateInitialViewController() as? NewDeviceViewController else { return }
             story.device = self.deviceManager.devices[self.currentIndexFocus.row]
-            self.present(story, animated: true, completion: nil)
+            Authentication.shared.goToAuthenticationIfNeeded(viewController: self, destination: story)
         }))
         alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)

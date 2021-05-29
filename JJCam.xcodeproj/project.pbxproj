@@ -24,8 +24,12 @@
 		412A157525C5A070007C9141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412A157325C5A070007C9141 /* Main.storyboard */; };
 		412A157A25C5A072007C9141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412A157925C5A072007C9141 /* Assets.xcassets */; };
 		412A157D25C5A072007C9141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412A157B25C5A072007C9141 /* LaunchScreen.storyboard */; };
+		4133D754265B156300D7475A /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4133D753265B156300D7475A /* Authentication.swift */; };
+		4133D756265B16E900D7475A /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4133D755265B16E900D7475A /* AuthenticationViewController.swift */; };
+		4133D758265B1DF300D7475A /* SettingsAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4133D757265B1DF300D7475A /* SettingsAuthenticationViewController.swift */; };
 		415846A925DC4E1300EAEF4D /* JJCam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 415846A725DC4E1300EAEF4D /* JJCam.xcdatamodeld */; };
 		4167B4A825EC54580072C054 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4167B4A725EC54580072C054 /* Utils.swift */; };
+		4177D4CC26606CCE000A8CDB /* CaseIterableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177D4CB26606CCE000A8CDB /* CaseIterableExtension.swift */; };
 		417C361B25E14C16005C2C4C /* Cameras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417C361A25E14C16005C2C4C /* Cameras.storyboard */; };
 		417C362225E14E3B005C2C4C /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C362125E14E3B005C2C4C /* CamerasViewController.swift */; };
 		41803AF925DAB3030070803F /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803AF825DAB3030070803F /* DeviceManager.swift */; };
@@ -61,6 +65,7 @@
 		41DF99E925E15733006F3CDE /* WatchCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DF99E825E15733006F3CDE /* WatchCamera.storyboard */; };
 		41DF99EC25E1575C006F3CDE /* WatchCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */; };
 		41DF99F625E17FA4006F3CDE /* successCircle.svg in Resources */ = {isa = PBXBuildFile; fileRef = 41DF99F525E17FA4006F3CDE /* successCircle.svg */; };
+		41E04208265B13280092D277 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E04207265B13280092D277 /* Authentication.storyboard */; };
 		41EB622625CAF1DC00DFAF54 /* home.html in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622525CAF1DC00DFAF54 /* home.html */; };
 		41EB622D25CB0D8200DFAF54 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622C25CB0D8200DFAF54 /* main.css */; };
 		41EB623025CB0D9100DFAF54 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 41EB622F25CB0D9100DFAF54 /* main.js */; };
@@ -87,8 +92,12 @@
 		412A157925C5A072007C9141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		412A157C25C5A072007C9141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		412A157E25C5A072007C9141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4133D753265B156300D7475A /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		4133D755265B16E900D7475A /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		4133D757265B1DF300D7475A /* SettingsAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAuthenticationViewController.swift; sourceTree = "<group>"; };
 		415846A825DC4E1300EAEF4D /* JJCam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJCam.xcdatamodel; sourceTree = "<group>"; };
 		4167B4A725EC54580072C054 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4177D4CB26606CCE000A8CDB /* CaseIterableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterableExtension.swift; sourceTree = "<group>"; };
 		417C361A25E14C16005C2C4C /* Cameras.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cameras.storyboard; sourceTree = "<group>"; };
 		417C362125E14E3B005C2C4C /* CamerasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamerasViewController.swift; sourceTree = "<group>"; };
 		41803AF825DAB3030070803F /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
@@ -124,6 +133,7 @@
 		41DF99E825E15733006F3CDE /* WatchCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchCamera.storyboard; sourceTree = "<group>"; };
 		41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCameraViewController.swift; sourceTree = "<group>"; };
 		41DF99F525E17FA4006F3CDE /* successCircle.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = successCircle.svg; sourceTree = "<group>"; };
+		41E04207265B13280092D277 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		41EB622525CAF1DC00DFAF54 /* home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = home.html; sourceTree = "<group>"; };
 		41EB622C25CB0D8200DFAF54 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		41EB622F25CB0D9100DFAF54 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
@@ -240,6 +250,7 @@
 		412A156E25C5A070007C9141 /* JJCam */ = {
 			isa = PBXGroup;
 			children = (
+				41E04205265B130C0092D277 /* Authentication */,
 				41119512263F80E000ACB11C /* Help */,
 				41034FAF25DC0CB500109D3A /* About */,
 				41803B0F25DAF4FF0070803F /* Settings */,
@@ -340,6 +351,25 @@
 			path = Img;
 			sourceTree = "<group>";
 		};
+		41E04205265B130C0092D277 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				41E04206265B13180092D277 /* Story */,
+				4133D753265B156300D7475A /* Authentication.swift */,
+				4133D755265B16E900D7475A /* AuthenticationViewController.swift */,
+				4133D757265B1DF300D7475A /* SettingsAuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		41E04206265B13180092D277 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				41E04207265B13280092D277 /* Authentication.storyboard */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		41EB622825CB0C8800DFAF54 /* Html */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +405,7 @@
 				41EB623325CB107B00DFAF54 /* UIViewExtension.swift */,
 				41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */,
 				41FD73D52638D2FB00454A82 /* UIDeviceExtension.swift */,
+				4177D4CB26606CCE000A8CDB /* CaseIterableExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,6 +508,7 @@
 				41DF99F625E17FA4006F3CDE /* successCircle.svg in Resources */,
 				41803B1225DAF5860070803F /* Settings.storyboard in Resources */,
 				417C361B25E14C16005C2C4C /* Cameras.storyboard in Resources */,
+				41E04208265B13280092D277 /* Authentication.storyboard in Resources */,
 				41803B1A25DAF6320070803F /* NewDevice.storyboard in Resources */,
 				41803B0625DAE4770070803F /* DeviceTableViewCell.xib in Resources */,
 				412A157525C5A070007C9141 /* Main.storyboard in Resources */,
@@ -538,10 +570,14 @@
 				41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */,
 				4113FF762619FA9C0055428F /* CircularProgressView.swift in Sources */,
 				41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */,
+				4133D756265B16E900D7475A /* AuthenticationViewController.swift in Sources */,
 				410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */,
 				41DF99EC25E1575C006F3CDE /* WatchCameraViewController.swift in Sources */,
+				4133D758265B1DF300D7475A /* SettingsAuthenticationViewController.swift in Sources */,
+				4177D4CC26606CCE000A8CDB /* CaseIterableExtension.swift in Sources */,
 				41EB623425CB107B00DFAF54 /* UIViewExtension.swift in Sources */,
 				415846A925DC4E1300EAEF4D /* JJCam.xcdatamodeld in Sources */,
+				4133D754265B156300D7475A /* Authentication.swift in Sources */,
 				41803B0225DAE3FC0070803F /* DevicesTableViewController.swift in Sources */,
 				41803B0925DAE4C40070803F /* DeviceTableViewCell.swift in Sources */,
 				412A157025C5A070007C9141 /* AppDelegate.swift in Sources */,

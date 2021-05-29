@@ -8,10 +8,12 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-    let settings = ["Adicionar Dispositivo", "Remover todos os dispositivos", "Ajuda", "Sobre"]
+    let settings = ["Adicionar Dispositivo", "Remover todos os dispositivos", "Senha", "Ajuda", "Sobre"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
+        tableView.rowHeight = 80
     }
 
     // MARK: - Table view data source
@@ -38,18 +40,21 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             let alert = UIAlertController(title: "Tem certeza que quer remover todos os dispositivos?", message: "", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
-                DeviceManager.shared.removeAll()
-                self.tableView.deselectRow(at: indexPath, animated: true)
+                Authentication.shared.goToAuthenticationIfNeeded(viewController: self) {
+                    DeviceManager.shared.removeAll()
+                }
             }))
             alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { _ in
                 self.dismiss(animated: true, completion: nil)
-                self.tableView.deselectRow(at: indexPath, animated: true)
             }))
             self.present(alert, animated: true, completion: nil)
         case 2:
+            guard let segue = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(identifier: "SettingsAuthenticationViewController") as? SettingsAuthenticationViewController else { return }
+            Authentication.shared.goToAuthenticationIfNeeded(viewController: self, destination: segue, force: true)
+        case 3:
             guard let segue = UIStoryboard(name: "Help", bundle: nil).instantiateInitialViewController() else { return }
             self.present(segue, animated: true, completion: nil)
-        case 3:
+        case 4:
             guard let segue = UIStoryboard(name: "About", bundle: nil).instantiateInitialViewController() else { return }
             self.present(segue, animated: true, completion: nil)
         default:

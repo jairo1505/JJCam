@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QoT-Nr-KV9">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QoT-Nr-KV9">
     <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,17 +15,18 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jr-7O-Dl9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="1073"/>
+            <point key="canvasLocation" x="609" y="1018"/>
         </scene>
         <!--Settings-->
         <scene sceneID="9V1-F7-uTk">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="zed-St-IgI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2F6-5P-ivy"/>
+                    <navigationItem key="navigationItem" id="ZP0-AO-OcT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lB-h0-KGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="1579"/>
+            <point key="canvasLocation" x="611" y="1675"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ars-17-WIK">
@@ -37,8 +38,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4AU-Q9-nSA" kind="relationship" relationship="viewControllers" id="Bge-kS-d46"/>
-                        <segue destination="zed-St-IgI" kind="relationship" relationship="viewControllers" id="KC2-c5-ONF"/>
+                        <segue destination="4AU-Q9-nSA" kind="relationship" relationship="viewControllers" id="FZV-Rw-pF0"/>
+                        <segue destination="zed-St-IgI" kind="relationship" relationship="viewControllers" id="O6i-u0-Ts6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTm-Kd-VXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
