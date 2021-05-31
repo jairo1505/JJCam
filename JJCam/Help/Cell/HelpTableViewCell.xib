@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="18122" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HelpTableViewCell" id="zAT-Da-A95" customClass="HelpTableViewCell" customModule="JJCam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1877" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zAT-Da-A95" id="7it-Gs-c1W">
+                <rect key="frame" x="0.0" y="0.0" width="1877" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-99-8NJ">
+                        <rect key="frame" x="16" y="16" width="1845" height="46"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-dY-o53">
+                        <rect key="frame" x="16" y="70" width="1845" height="94"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Y7a-dY-o53" secondAttribute="trailing" constant="16" id="866-GG-VK2"/>
+                    <constraint firstItem="i4R-99-8NJ" firstAttribute="leading" secondItem="7it-Gs-c1W" secondAttribute="leading" constant="16" id="EWj-zA-GDj"/>
+                    <constraint firstAttribute="trailing" secondItem="i4R-99-8NJ" secondAttribute="trailing" constant="16" id="HHe-fW-zs9"/>
+                    <constraint firstItem="Y7a-dY-o53" firstAttribute="leading" secondItem="7it-Gs-c1W" secondAttribute="leading" constant="16" id="HJU-Bh-SHS"/>
+                    <constraint firstItem="Y7a-dY-o53" firstAttribute="top" secondItem="i4R-99-8NJ" secondAttribute="bottom" constant="8" id="LJj-kG-aqo"/>
+                    <constraint firstAttribute="bottom" secondItem="Y7a-dY-o53" secondAttribute="bottom" constant="16" id="lw2-Xs-ZBY"/>
+                    <constraint firstItem="i4R-99-8NJ" firstAttribute="top" secondItem="7it-Gs-c1W" secondAttribute="top" constant="16" id="mZ6-bF-GC8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answer" destination="Y7a-dY-o53" id="s29-4Q-4cr"/>
+                <outlet property="question" destination="i4R-99-8NJ" id="DIt-ZE-AsQ"/>
+            </connections>
+            <point key="canvasLocation" x="145.5" y="-65"/>
+        </tableViewCell>
+    </objects>
+</document>

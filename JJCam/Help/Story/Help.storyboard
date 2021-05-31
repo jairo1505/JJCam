@@ -25,14 +25,24 @@
                                     <navigationItem title="Ajuda" id="ldg-6a-qbf"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="8pP-Xb-glU">
+                                <rect key="frame" x="80" y="145" width="1760" height="875"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rbh-h3-eDf"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4Jd-Rw-WvX" secondAttribute="trailing" id="0GW-Ms-YJz"/>
                             <constraint firstItem="4Jd-Rw-WvX" firstAttribute="top" secondItem="Oo6-ab-TCE" secondAttribute="top" id="7Rn-Ff-eC0"/>
+                            <constraint firstItem="8pP-Xb-glU" firstAttribute="top" secondItem="4Jd-Rw-WvX" secondAttribute="bottom" id="Uoh-O9-4EY"/>
+                            <constraint firstItem="8pP-Xb-glU" firstAttribute="leading" secondItem="Rbh-h3-eDf" secondAttribute="leading" id="cWD-qH-9Cr"/>
                             <constraint firstItem="4Jd-Rw-WvX" firstAttribute="leading" secondItem="Oo6-ab-TCE" secondAttribute="leading" id="iXB-ht-8Ix"/>
+                            <constraint firstItem="Rbh-h3-eDf" firstAttribute="bottom" secondItem="8pP-Xb-glU" secondAttribute="bottom" id="rCS-Dp-8hr"/>
+                            <constraint firstItem="Rbh-h3-eDf" firstAttribute="trailing" secondItem="8pP-Xb-glU" secondAttribute="trailing" id="vbn-bB-PfD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8pP-Xb-glU" id="A0G-CS-NOZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uX-ET-Cqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
