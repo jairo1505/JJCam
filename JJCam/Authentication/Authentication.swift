@@ -94,7 +94,10 @@ class Authentication {
     }
     
     private func continueDestination() {
-        guard let viewController = viewController, let destination = destination else { return }
+        guard let viewController = viewController, let destination = destination else {
+            viewController?.dismiss(animated: true, completion: nil)
+            return
+        }
         
         viewController.view.isHidden = true
         viewController.tabBarController?.tabBar.isHidden = true

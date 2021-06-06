@@ -10,7 +10,9 @@ import UIKit
 class HelpViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var data = [["Como adicionar um dispositivo?", ""]]
+    
+    var helpQuestions = [Help(question: "", answer: "")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,19 +21,34 @@ class HelpViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
+        
+        getQuestions()
+    }
+    
+    private func getQuestions() {
+        if let url = Bundle.main.url(forResource: "Questions", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                helpQuestions = try JSONDecoder().decode([Help].self, from: data)
+                tableView.reloadData()
+            } catch {
+                
+            }
+        }
     }
 }
 
 // MARK: - Table View Data Source
 extension HelpViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return helpQuestions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HelpTableViewCell", for: indexPath) as? HelpTableViewCell else { return UITableViewCell() }
-        cell.question.text = data[indexPath.row][0]
-        cell.answer.text = data[indexPath.row][1]
+        let item = helpQuestions[indexPath.row]
+        cell.question.text = item.question
+        cell.answer.text = item.show ?? false ? item.answer : ""
         return cell
     }
 }
@@ -39,8 +56,13 @@ extension HelpViewController: UITableViewDataSource {
 // MARK: - Table View Delegate
 extension HelpViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        data[0][1] = data[0][1].isEmpty ? "Há duas opções, você pode adicionar via interface web em qualquer celular, tablet ou computador que esteja na mesma rede local ou ainda adicionar na própria Apple TV clicando no botão \"Adicionar pela Apple TV\"" : ""
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        var indexPaths = [indexPath]
+        for i in 0...helpQuestions.count-1 where i != indexPath.row {
+            helpQuestions[i].show = false
+            indexPaths.append(IndexPath(row: i, section: 0))
+        }
+        helpQuestions[indexPath.row].show = helpQuestions[indexPath.row].show ?? false ? false : true
+        tableView.reloadRows(at: indexPaths, with: .fade)
     }
     
     func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
@@ -54,5 +76,13 @@ extension HelpViewController: UITableViewDelegate {
             newCell.question.textColor = UIColor.black
             newCell.answer.textColor = UIColor.black
         }
+    }
+}
+
+extension HelpViewController {
+    struct Help: Codable {
+        let question: String?
+        let answer: String?
+        var show: Bool?
     }
 }

@@ -45,6 +45,7 @@
 		41803B1D25DAF64F0070803F /* NewDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */; };
 		41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41803B2125DAF7B40070803F /* SettingsTableViewCell.swift */; };
 		41803B2525DAF7C80070803F /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41803B2425DAF7C80070803F /* SettingsTableViewCell.xib */; };
+		4185C5EC266D7C76004D9141 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 4185C5EB266D7C76004D9141 /* Questions.json */; };
 		41941BB4261B985700AE9C06 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */; };
 		41DF99C025E152DE006F3CDE /* CameraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */; };
 		41DF99C325E152F1006F3CDE /* CameraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */; };
@@ -115,6 +116,7 @@
 		41803B1C25DAF64F0070803F /* NewDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceViewController.swift; sourceTree = "<group>"; };
 		41803B2125DAF7B40070803F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		41803B2425DAF7C80070803F /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		4185C5EB266D7C76004D9141 /* Questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
 		41941BB3261B985700AE9C06 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
 		41DF99BF25E152DE006F3CDE /* CameraTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraTableViewCell.xib; sourceTree = "<group>"; };
 		41DF99C225E152F1006F3CDE /* CameraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTableViewCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				4122CD61266594CA0039B8D5 /* Cell */,
 				41119513263F80E700ACB11C /* Story */,
 				41119516263F810600ACB11C /* HelpViewController.swift */,
+				4185C5EB266D7C76004D9141 /* Questions.json */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				41803AFF25DAE3E80070803F /* Devices.storyboard in Resources */,
 				412A157A25C5A072007C9141 /* Assets.xcassets in Resources */,
 				41803B2525DAF7C80070803F /* SettingsTableViewCell.xib in Resources */,
+				4185C5EC266D7C76004D9141 /* Questions.json in Resources */,
 				41DF99F625E17FA4006F3CDE /* successCircle.svg in Resources */,
 				41803B1225DAF5860070803F /* Settings.storyboard in Resources */,
 				417C361B25E14C16005C2C4C /* Cameras.storyboard in Resources */,

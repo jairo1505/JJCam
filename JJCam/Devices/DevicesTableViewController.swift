@@ -31,7 +31,11 @@ class DevicesTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
             Authentication.shared.goToAuthenticationIfNeeded(viewController: self) {
                 self.deviceManager.remove(id: self.deviceManager.devices[self.currentIndexFocus.row].id ?? UUID()) {
-                    self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
+                    if self.tableView.numberOfRows(inSection: 0) <= 1 {
+                        self.tableView.reloadData()
+                    } else {
+                        self.tableView.deleteRows(at: [self.currentIndexFocus], with: .automatic)
+                    }
                 }
             }
         }))
@@ -55,7 +59,7 @@ class DevicesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as? DeviceTableViewCell else { return UITableViewCell() }
         if deviceManager.devices.count == 0 {
-            cell.title.text = "Nenhum dispositivo cadastrado!"
+            cell.title.text = "Nenhum dispositivo cadastrado, clique aqui para adicionar 😊"
             cell.subtitle.text = ""
         } else {
             let attributed = NSMutableAttributedString()
@@ -68,15 +72,20 @@ class DevicesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if deviceManager.devices[indexPath.row].channels == 1 {
-            guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
-            story.index = 0
-            story.indexDevice = indexPath.row
+        if deviceManager.devices.count == 0 {
+            guard let story = UIStoryboard(name: "NewDevice", bundle: nil).instantiateInitialViewController() else { return }
             present(story, animated: true, completion: nil)
         } else {
-            guard let story = UIStoryboard(name: "Cameras", bundle: nil).instantiateInitialViewController() as? CamerasViewController else { return }
-            story.index = indexPath.row
-            present(story, animated: true, completion: nil)
+            if deviceManager.devices[indexPath.row].channels == 1 {
+                guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
+                story.index = 0
+                story.indexDevice = indexPath.row
+                present(story, animated: true, completion: nil)
+            } else {
+                guard let story = UIStoryboard(name: "Cameras", bundle: nil).instantiateInitialViewController() as? CamerasViewController else { return }
+                story.index = indexPath.row
+                present(story, animated: true, completion: nil)
+            }
         }
     }
     

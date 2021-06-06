@@ -1,0 +1,10 @@
+[
+    {
+        "question": "Como adicionar um dispositivo?",
+        "answer": "Há duas opções, você pode adicionar via interface web em qualquer celular, tablet ou computador que esteja na mesma rede local ou ainda adicionar na própria Apple TV clicando no botão \"Adicionar pela Apple TV\""
+    },
+    {
+        "question": "Por que não consigo adicionar mais câmeras em uma visualização?",
+        "answer": "Esta quantidade depende do modelo da sua Apple TV:\n- Apple TV HD suporta até 4 câmeras simultâneas\n- Apple TV 4K suporta até 9 câmeras simultâneas\n- Apple TV 4K 2ª geração suporta até 16 câmeras simultâneas"
+    }
+]
