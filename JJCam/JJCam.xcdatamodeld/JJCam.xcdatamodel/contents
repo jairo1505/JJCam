@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CamerasView" representedClassName="CamerasView" syncable="YES" codeGenerationType="class">
+        <attribute name="deviceId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="viewId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -16,13 +17,12 @@
         <attribute name="user" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Views" representedClassName="Views" syncable="YES" codeGenerationType="class">
-        <attribute name="deviceId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CamerasView" positionX="609.4418640136719" positionY="110.0363159179688" width="128" height="74"/>
+        <element name="CamerasView" positionX="609.4418640136719" positionY="110.0363159179688" width="128" height="89"/>
         <element name="Devices" positionX="-63" positionY="-18" width="128" height="149"/>
-        <element name="Views" positionX="304.7557373046875" positionY="-20.57565307617188" width="128" height="74"/>
+        <element name="Views" positionX="304.7557373046875" positionY="-20.57565307617188" width="128" height="59"/>
     </elements>
 </model>

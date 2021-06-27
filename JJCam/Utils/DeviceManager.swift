@@ -134,7 +134,7 @@ class DeviceManager {
     }
     
     // MARK: - Views
-    func newView(name: String, deviceId: UUID, cameras: [Int]) {
+    func newView(name: String, deviceId: UUID, cameras: [Camera]) {
         DispatchQueue.main.async {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -143,7 +143,6 @@ class DeviceManager {
             let uuid = UUID()
             newUser.setValue(uuid, forKey: "id")
             newUser.setValue(name, forKey: "name")
-            newUser.setValue(deviceId, forKey: "deviceId")
             do {
                 try context.save()
                 self.newCameras(viewId: uuid, cameras: cameras)
@@ -153,14 +152,13 @@ class DeviceManager {
         }
     }
     
-    func getViews(deviceId: UUID, completion: @escaping (_ views: [DeviceView]) -> Void) {
+    func getViews(completion: @escaping (_ views: [DeviceView]) -> Void) {
         DispatchQueue.main.async {
             var views: [DeviceView] = []
             let group = DispatchGroup()
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Views")
-            request.predicate = NSPredicate(format: "deviceId == \"\(deviceId)\"")
             request.returnsObjectsAsFaults = false
             do {
                 let result = try context.fetch(request)
@@ -168,7 +166,6 @@ class DeviceManager {
                     group.enter()
                     self.getCameras(viewId: data.value(forKey: "id") as? UUID ?? UUID()) { cameras in
                         let deviceView = DeviceView(id: data.value(forKey: "id") as? UUID ?? UUID(),
-                                            deviceId: data.value(forKey: "deviceId") as? UUID ?? UUID(),
                                             name: data.value(forKey: "name") as? String ?? "",
                                             cameras: cameras)
                         views.append(deviceView)
@@ -224,7 +221,7 @@ class DeviceManager {
         }
     }
     
-    func newCameras(viewId: UUID, cameras: [Int]) {
+    private func newCameras(viewId: UUID, cameras: [Camera]) {
         DispatchQueue.main.async {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -234,7 +231,8 @@ class DeviceManager {
                 
                 newUser.setValue(UUID(), forKey: "id")
                 newUser.setValue(viewId, forKey: "viewId")
-                newUser.setValue($0, forKey: "number")
+                newUser.setValue($0.deviceId, forKey: "deviceId")
+                newUser.setValue($0.number, forKey: "number")
                 do {
                     try context.save()
                 } catch {
@@ -244,9 +242,9 @@ class DeviceManager {
         }
     }
     
-    func getCameras(viewId: UUID, completion: @escaping (_ cameras: [Int]) -> Void) {
+    private func getCameras(viewId: UUID, completion: @escaping (_ cameras: [Camera]) -> Void) {
         DispatchQueue.main.async {
-            var cameras: [Int] = []
+            var cameras: [Camera] = []
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CamerasView")
@@ -255,7 +253,7 @@ class DeviceManager {
             do {
                 let result = try context.fetch(request)
                 for data in result as! [NSManagedObject] {
-                    cameras.append(data.value(forKey: "number") as? Int ?? 0)
+                    cameras.append(Camera(deviceId: data.value(forKey: "deviceId") as? UUID ?? UUID(), number: data.value(forKey: "number") as? Int ?? 0))
                 }
                 completion(cameras)
             } catch {
@@ -264,7 +262,7 @@ class DeviceManager {
         }
     }
     
-    func removeCameras(viewId: UUID, completion: @escaping () -> Void) {
+    private func removeCameras(viewId: UUID, completion: @escaping () -> Void) {
         DispatchQueue.main.async {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -286,8 +284,12 @@ class DeviceManager {
 
     struct DeviceView {
         let id: UUID
-        let deviceId: UUID
         let name: String
-        let cameras: [Int]
+        let cameras: [Camera]
+    }
+    
+    struct Camera {
+        let deviceId: UUID
+        let number: Int
     }
 }

@@ -10,6 +10,8 @@
 		186FE6DF2AFC2FEEC1154269 /* Pods_JJCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC7645FC27AF6182441B077 /* Pods_JJCam.framework */; };
 		41034FB225DC0CEA00109D3A /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41034FB125DC0CEA00109D3A /* About.storyboard */; };
 		41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41034FB425DC0DBF00109D3A /* AboutViewController.swift */; };
+		410A87F02686905100EB52FE /* Views.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410A87EF2686905100EB52FE /* Views.storyboard */; };
+		410A87F2268690C300EB52FE /* ViewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A87F1268690C300EB52FE /* ViewsTableViewController.swift */; };
 		410EE1A725EBCD19007B9620 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1A625EBCD19007B9620 /* CameraView.swift */; };
 		410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410EE1A925EC02EB007B9620 /* NewView.storyboard */; };
 		410EE1AD25EC047A007B9620 /* NewViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410EE1AC25EC047A007B9620 /* NewViewViewController.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		41034FB125DC0CEA00109D3A /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		41034FB425DC0DBF00109D3A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		410A87EF2686905100EB52FE /* Views.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Views.storyboard; sourceTree = "<group>"; };
+		410A87F1268690C300EB52FE /* ViewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsTableViewController.swift; sourceTree = "<group>"; };
 		410EE1A625EBCD19007B9620 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		410EE1A925EC02EB007B9620 /* NewView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewView.storyboard; sourceTree = "<group>"; };
 		410EE1AC25EC047A007B9620 /* NewViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,23 @@
 			path = Story;
 			sourceTree = "<group>";
 		};
+		410A87ED2686900100EB52FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				410A87EE2686900E00EB52FE /* Story */,
+				410A87F1268690C300EB52FE /* ViewsTableViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		410A87EE2686900E00EB52FE /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				410A87EF2686905100EB52FE /* Views.storyboard */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		41119512263F80E000ACB11C /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +288,7 @@
 		412A156E25C5A070007C9141 /* JJCam */ = {
 			isa = PBXGroup;
 			children = (
+				410A87ED2686900100EB52FE /* Views */,
 				41E04205265B130C0092D277 /* Authentication */,
 				41119512263F80E000ACB11C /* Help */,
 				41034FAF25DC0CB500109D3A /* About */,
@@ -531,6 +553,7 @@
 				41803B1A25DAF6320070803F /* NewDevice.storyboard in Resources */,
 				41803B0625DAE4770070803F /* DeviceTableViewCell.xib in Resources */,
 				412A157525C5A070007C9141 /* Main.storyboard in Resources */,
+				410A87F02686905100EB52FE /* Views.storyboard in Resources */,
 				411676A0264F2F6F0098F839 /* materialize.min.css in Resources */,
 				410EE1AA25EC02EB007B9620 /* NewView.storyboard in Resources */,
 			);
@@ -603,6 +626,7 @@
 				412A157025C5A070007C9141 /* AppDelegate.swift in Sources */,
 				41119517263F810600ACB11C /* HelpViewController.swift in Sources */,
 				41034FB525DC0DBF00109D3A /* AboutViewController.swift in Sources */,
+				410A87F2268690C300EB52FE /* ViewsTableViewController.swift in Sources */,
 				4167B4A825EC54580072C054 /* Utils.swift in Sources */,
 				41803B2225DAF7B40070803F /* SettingsTableViewCell.swift in Sources */,
 				41803B1725DAF5B70070803F /* SettingsTableViewController.swift in Sources */,

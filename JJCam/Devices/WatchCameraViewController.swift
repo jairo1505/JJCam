@@ -8,13 +8,15 @@
 import UIKit
 
 class WatchCameraViewController: UIViewController {
+    typealias Camera = DeviceManager.Camera
+    typealias View = DeviceManager.DeviceView
     
-    public var index = 0
-    public var indexDevice = 0
+    public var viewModel: ViewModel?
     
-    private var device: Device!
-    private var views: [DeviceManager.DeviceView] = []
     private var maxIndex = 0
+    private var index = 0
+    private var views: [View] = []
+    private var device: Device?
     
     var swipeRight = UISwipeGestureRecognizer()
     var swipeLeft = UISwipeGestureRecognizer()
@@ -25,25 +27,32 @@ class WatchCameraViewController: UIViewController {
         swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(nextView))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
-
+        
         swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(prevView))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
-        device = DeviceManager.shared.devices[indexDevice]
-        DeviceManager.shared.getViews(deviceId: device.id ?? UUID()) { views in
-            self.views = views
-            self.maxIndex = views.count + (self.device.channels - 1)
-            
-            self.searchCameras()
+        guard let viewModel = viewModel else { return }
+        if viewModel.flow == .camera {
+            device = DeviceManager.shared.devices.first(where: { $0.id == viewModel.deviceId })
+            index = (viewModel.number ?? 1) - 1
+            maxIndex = (device?.channels ?? 1) - 1
+            searchCameras()
+        } else {
+            DeviceManager.shared.getViews { [self] views in
+                self.views = views
+                index = viewModel.number ?? 0
+                maxIndex = views.count - 1
+                self.searchCameras()
+            }
         }
     }
     
     private func searchCameras() {
-        if index < views.count {
+        if viewModel?.flow == .view {
             configureScreen(cameras: views[index].cameras)
         } else {
-            configureScreen(cameras: [index - views.count + 1])
+            configureScreen(cameras: [Camera(deviceId: device?.id ?? UUID(), number: index+1)])
         }
     }
     
@@ -66,10 +75,10 @@ class WatchCameraViewController: UIViewController {
         searchCameras()
     }
     
-    private func configureScreen(cameras: [Int]) {
+    private func configureScreen(cameras: [Camera]) {
         switch cameras.count {
         case 1:
-            showCameras(x: 0, y: 0, divider: 1, cameraIndex: 0, cameras: cameras)
+            showCameras(x: 0, y: 0, divider: 1, cameraIndex: 0, camera: cameras[0])
         case 2...4:
             var linha = 0
             var coluna = 0
@@ -78,7 +87,7 @@ class WatchCameraViewController: UIViewController {
                     linha = 0
                     coluna += 1
                 }
-                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 2, cameraIndex: i-1, cameras: cameras)
+                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 2, cameraIndex: i-1, camera: cameras.count <= i-1 ? nil : cameras[i-1])
                 linha += 1
             }
         case 5...9:
@@ -89,7 +98,7 @@ class WatchCameraViewController: UIViewController {
                     linha = 0
                     coluna += 1
                 }
-                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 3, cameraIndex: i-1, cameras: cameras)
+                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 3, cameraIndex: i-1, camera: cameras.count <= i-1 ? nil : cameras[i-1])
                 linha += 1
             }
         case 10...16:
@@ -100,7 +109,7 @@ class WatchCameraViewController: UIViewController {
                     linha = 0
                     coluna += 1
                 }
-                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 4, cameraIndex: i-1, cameras: cameras)
+                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 4, cameraIndex: i-1, camera: cameras.count <= i-1 ? nil : cameras[i-1])
                 linha += 1
             }
         default:
@@ -117,16 +126,20 @@ class WatchCameraViewController: UIViewController {
         }
     }
     
-    private func showCameras(x: CGFloat, y: CGFloat, divider: CGFloat, cameraIndex: Int, cameras: [Int]) {
+    private func showCameras(x: CGFloat, y: CGFloat, divider: CGFloat, cameraIndex: Int, camera: Camera?) {
         let xBase = view.frame.width/divider
         let yBase = view.frame.height/divider
         let cameraView = CameraView(frame: CGRect(x: x == 0 ? 0 : xBase*x, y: y == 0 ? 0 : yBase*y, width: view.frame.width/divider, height: view.frame.height/divider))
-        if cameraIndex < cameras.count {
-            cameraView.setUrl(url: DeviceManager.shared.devices[indexDevice].getProtocol(channel: cameras[cameraIndex], quality: cameras.count > 1 ? .low : .high))
+        if let camera = camera {
+            cameraView.setUrl(url: getUrl(camera))
         } else {
             cameraView.setNoVideo()
         }
         view.addSubview(cameraView)
+    }
+    
+    private func getUrl(_ camera: Camera) -> String {
+        return DeviceManager.shared.devices.first(where: { $0.id == camera.deviceId })?.getProtocol(channel: camera.number, quality: viewModel?.flow == .camera ? .high : .low) ?? ""
     }
     
     private func closeAllCameras() {
@@ -143,5 +156,18 @@ class WatchCameraViewController: UIViewController {
         view.removeGestureRecognizer(swipeLeft)
         view.removeGestureRecognizer(swipeRight)
     }
+    
+}
 
+extension WatchCameraViewController {
+    enum Flow {
+        case camera
+        case view
+    }
+    struct ViewModel {
+        let flow: Flow
+        let deviceId: UUID?
+        let viewId: UUID?
+        let number: Int?
+    }
 }

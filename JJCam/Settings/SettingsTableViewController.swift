@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-    let settings = ["Adicionar Dispositivo", "Remover todos os dispositivos", "Senha", "Ajuda", "Sobre"]
+    let settings = ["Remover todos os dispositivos", "Senha", "Ajuda", "Sobre"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,6 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            guard let segue = UIStoryboard(name: "NewDevice", bundle: nil).instantiateInitialViewController() else { return }
-            self.present(segue, animated: true, completion: nil)
-        case 1:
             let alert = UIAlertController(title: "Tem certeza que quer remover todos os dispositivos?", message: "", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Remover", style: .destructive, handler: { _ in
                 Authentication.shared.goToAuthenticationIfNeeded(viewController: self) {
@@ -48,13 +45,13 @@ class SettingsTableViewController: UITableViewController {
                 self.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)
-        case 2:
+        case 1:
             guard let segue = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(identifier: "SettingsAuthenticationViewController") as? SettingsAuthenticationViewController else { return }
             Authentication.shared.goToAuthenticationIfNeeded(viewController: self, destination: segue, force: true)
-        case 3:
+        case 2:
             guard let segue = UIStoryboard(name: "Help", bundle: nil).instantiateInitialViewController() else { return }
             self.present(segue, animated: true, completion: nil)
-        case 4:
+        case 3:
             guard let segue = UIStoryboard(name: "About", bundle: nil).instantiateInitialViewController() else { return }
             self.present(segue, animated: true, completion: nil)
         default:

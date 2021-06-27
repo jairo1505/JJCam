@@ -12,13 +12,15 @@ protocol NewViewViewControllerDelegate: AnyObject {
 }
 
 class NewViewViewController: UIViewController {
+    
+    typealias Camera = DeviceManager.Camera
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var nameView: UITextField!
     @IBOutlet weak var selectorLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let name = nameView.text, !(nameView.text?.isEmpty ?? true) else {
+        guard let name = nameView.text, !name.isEmpty else {
             let alert = UIAlertController(title: "Preecha o campo Nome da Visualização!", message: "", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -36,8 +38,9 @@ class NewViewViewController: UIViewController {
         }
     }
     
-    private var cameras: [Int] = []
+    private var cameras: [Camera] = []
     private var limit = 4
+    private let deviceManager = DeviceManager.shared
     public var indexDevice = 0
     public var delegate: NewViewViewControllerDelegate?
     
@@ -65,16 +68,24 @@ class NewViewViewController: UIViewController {
 }
 
 extension NewViewViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return deviceManager.devices.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DeviceManager.shared.devices[indexDevice].channels
+        return deviceManager.devices[section].channels
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CameraTableViewCell", for: indexPath) as? CameraTableViewCell else { return UITableViewCell() }
         cell.title.text = "Câmera \(indexPath.row + 1)"
-        let cam = cameras.filter({$0 == indexPath.row + 1})
+        let cam = cameras.filter({$0.number == indexPath.row + 1 && $0.deviceId == deviceManager.devices[indexPath.section].id})
         cell.checkImg.alpha = cam.count > 0 ? 1 : 0
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return deviceManager.devices[section].name
     }
 }
 
@@ -94,14 +105,14 @@ extension NewViewViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         guard let cell = tableView.cellForRow(at: indexPath) as? CameraTableViewCell else { return }
         for (index, item) in cameras.enumerated() {
-            if item == indexPath.row + 1 {
+            if item.number == indexPath.row + 1 && item.deviceId == deviceManager.devices[indexPath.section].id {
                 cameras.remove(at: index)
                 cell.animateCheck(show: false)
                 return
             }
         }
         if cameras.count < limit {
-            cameras.append(indexPath.row + 1)
+            cameras.append(Camera(deviceId: deviceManager.devices[indexPath.section].id ?? UUID(), number: indexPath.row + 1))
             cell.animateCheck(show: true)
         } else {
             UIView.animate(withDuration: 0.25) {

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xgj-up-wSf">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Visualizações-->
+        <scene sceneID="9lE-WX-96o">
+            <objects>
+                <viewController title="Visualizações" id="Xgj-up-wSf" customClass="ViewsTableViewController" customModule="JJCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aTn-mJ-5lt"/>
+                        <viewControllerLayoutGuide type="bottom" id="BrO-eL-FPV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oo6-ab-TCE">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="ANN-6N-Fr6">
+                                <rect key="frame" x="80" y="60" width="1760" height="960"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rbh-h3-eDf"/>
+                        <constraints>
+                            <constraint firstItem="ANN-6N-Fr6" firstAttribute="leading" secondItem="Rbh-h3-eDf" secondAttribute="leading" id="6EL-6v-ci5"/>
+                            <constraint firstItem="Rbh-h3-eDf" firstAttribute="bottom" secondItem="ANN-6N-Fr6" secondAttribute="bottom" id="DyF-HF-76W"/>
+                            <constraint firstItem="ANN-6N-Fr6" firstAttribute="top" secondItem="Rbh-h3-eDf" secondAttribute="top" id="GcB-Bi-VNd"/>
+                            <constraint firstItem="Rbh-h3-eDf" firstAttribute="trailing" secondItem="ANN-6N-Fr6" secondAttribute="trailing" id="Wts-Dm-QoH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ANN-6N-Fr6" id="Upg-1w-eL2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7uX-ET-Cqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="-83"/>
+        </scene>
+    </scenes>
+</document>

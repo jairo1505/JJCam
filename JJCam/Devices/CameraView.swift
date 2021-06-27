@@ -14,7 +14,7 @@ class CameraView: UIView {
     private var indicator: UIActivityIndicatorView!
     
     open func setUrl(url: String?) {
-        guard let url = url else { return }
+        guard let url = url, !url.isEmpty else { return }
         var cStringRef: UnsafeMutablePointer<Int8>{
         let cString = ("16:9" as NSString).utf8String
             return UnsafeMutablePointer.init(mutating: cString)!
