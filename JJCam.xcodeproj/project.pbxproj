@@ -217,6 +217,7 @@
 			children = (
 				410A87EE2686900E00EB52FE /* Story */,
 				410A87F1268690C300EB52FE /* ViewsTableViewController.swift */,
+				410EE1AC25EC047A007B9620 /* NewViewViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				410A87EF2686905100EB52FE /* Views.storyboard */,
+				410EE1A925EC02EB007B9620 /* NewView.storyboard */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -327,7 +329,6 @@
 				417C362125E14E3B005C2C4C /* CamerasViewController.swift */,
 				41DF99EB25E1575C006F3CDE /* WatchCameraViewController.swift */,
 				410EE1A625EBCD19007B9620 /* CameraView.swift */,
-				410EE1AC25EC047A007B9620 /* NewViewViewController.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -339,7 +340,6 @@
 				41803B1925DAF6320070803F /* NewDevice.storyboard */,
 				417C361A25E14C16005C2C4C /* Cameras.storyboard */,
 				41DF99E825E15733006F3CDE /* WatchCamera.storyboard */,
-				410EE1A925EC02EB007B9620 /* NewView.storyboard */,
 			);
 			path = Storys;
 			sourceTree = "<group>";
