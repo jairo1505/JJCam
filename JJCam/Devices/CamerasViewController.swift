@@ -54,7 +54,7 @@ extension CamerasViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let story = UIStoryboard(name: "WatchCamera", bundle: nil).instantiateInitialViewController() as? WatchCameraViewController else { return }
-        story.viewModel = WatchCameraViewController.ViewModel(flow: .camera, deviceId: deviceManager.devices[index].id, viewId: nil, number: indexPath.row+1)
+        story.viewModel = WatchCameraViewController.ViewModel(flow: .camera, deviceId: deviceManager.devices[index].id, viewId: nil, number: indexPath.row)
         present(story, animated: true, completion: nil)
     }
 }

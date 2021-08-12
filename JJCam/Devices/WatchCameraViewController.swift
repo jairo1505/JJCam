@@ -35,7 +35,7 @@ class WatchCameraViewController: UIViewController {
         guard let viewModel = viewModel else { return }
         if viewModel.flow == .camera {
             device = DeviceManager.shared.devices.first(where: { $0.id == viewModel.deviceId })
-            index = (viewModel.number ?? 1) - 1
+            index = (viewModel.number ?? 1)
             maxIndex = (device?.channels ?? 1) - 1
             searchCameras()
         } else {
@@ -52,11 +52,12 @@ class WatchCameraViewController: UIViewController {
         if viewModel?.flow == .view {
             configureScreen(cameras: views[index].cameras)
         } else {
-            configureScreen(cameras: [Camera(deviceId: device?.id ?? UUID(), number: index+1)])
+            configureScreen(cameras: [Camera(deviceId: device?.id ?? UUID(), number: index + 1)])
         }
     }
     
     @objc func prevView() {
+        guard maxIndex > 0 else { return }
         closeAllCameras()
         if index == 0 {
             index = maxIndex
@@ -66,6 +67,7 @@ class WatchCameraViewController: UIViewController {
         searchCameras()
     }
     @objc func nextView() {
+        guard maxIndex > 0 else { return }
         closeAllCameras()
         if index == maxIndex {
             index = 0
@@ -78,7 +80,7 @@ class WatchCameraViewController: UIViewController {
     private func configureScreen(cameras: [Camera]) {
         switch cameras.count {
         case 1:
-            showCameras(x: 0, y: 0, divider: 1, cameraIndex: 0, camera: cameras[0])
+            showCameras(x: 0, y: 0, divider: 1, camera: cameras[0])
         case 2...4:
             var linha = 0
             var coluna = 0
@@ -87,7 +89,7 @@ class WatchCameraViewController: UIViewController {
                     linha = 0
                     coluna += 1
                 }
-                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 2, cameraIndex: i-1, camera: cameras.count <= i-1 ? nil : cameras[i-1])
+                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 2, camera: cameras.count <= i-1 ? nil : cameras[i-1])
                 linha += 1
             }
         case 5...9:
@@ -98,7 +100,7 @@ class WatchCameraViewController: UIViewController {
                     linha = 0
                     coluna += 1
                 }
-                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 3, cameraIndex: i-1, camera: cameras.count <= i-1 ? nil : cameras[i-1])
+                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 3, camera: cameras.count <= i-1 ? nil : cameras[i-1])
                 linha += 1
             }
         case 10...16:
@@ -109,7 +111,7 @@ class WatchCameraViewController: UIViewController {
                     linha = 0
                     coluna += 1
                 }
-                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 4, cameraIndex: i-1, camera: cameras.count <= i-1 ? nil : cameras[i-1])
+                showCameras(x: CGFloat(linha), y: CGFloat(coluna), divider: 4, camera: cameras.count <= i-1 ? nil : cameras[i-1])
                 linha += 1
             }
         default:
@@ -126,7 +128,7 @@ class WatchCameraViewController: UIViewController {
         }
     }
     
-    private func showCameras(x: CGFloat, y: CGFloat, divider: CGFloat, cameraIndex: Int, camera: Camera?) {
+    private func showCameras(x: CGFloat, y: CGFloat, divider: CGFloat, camera: Camera?) {
         let xBase = view.frame.width/divider
         let yBase = view.frame.height/divider
         let cameraView = CameraView(frame: CGRect(x: x == 0 ? 0 : xBase*x, y: y == 0 ? 0 : yBase*y, width: view.frame.width/divider, height: view.frame.height/divider))
